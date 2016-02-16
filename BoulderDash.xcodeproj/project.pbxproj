@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		950090011C73BF6E005E0568 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950090001C73BF6E005E0568 /* FBSDKCoreKit.framework */; };
+		950090041C73C4CC005E0568 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 950090031C73C4CB005E0568 /* FBSDKLoginKit.framework */; };
 		95946D6A1C6D56040031B15B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95946D691C6D56040031B15B /* AppDelegate.swift */; };
 		95946D6C1C6D56040031B15B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95946D6B1C6D56040031B15B /* ViewController.swift */; };
 		95946D6F1C6D56040031B15B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95946D6D1C6D56040031B15B /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		950090001C73BF6E005E0568 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		950090031C73C4CB005E0568 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		95946D661C6D56040031B15B /* BoulderDash.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoulderDash.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95946D691C6D56040031B15B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95946D6B1C6D56040031B15B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				950090041C73C4CC005E0568 /* FBSDKLoginKit.framework in Frameworks */,
+				950090011C73BF6E005E0568 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		950090021C73BF80005E0568 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				950090031C73C4CB005E0568 /* FBSDKLoginKit.framework */,
+				950090001C73BF6E005E0568 /* FBSDKCoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		95946D5D1C6D56030031B15B = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +96,7 @@
 				95946D7D1C6D56040031B15B /* BoulderDashTests */,
 				95946D881C6D56040031B15B /* BoulderDashUITests */,
 				95946D671C6D56040031B15B /* Products */,
+				950090021C73BF80005E0568 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -399,6 +415,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/Users/classroomtech/Downloads/FacebookSDK,
+				);
 				INFOPLIST_FILE = BoulderDash/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Matt-Tim.BoulderDash";
@@ -410,6 +431,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/Users/classroomtech/Downloads/FacebookSDK,
+				);
 				INFOPLIST_FILE = BoulderDash/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Matt-Tim.BoulderDash";
@@ -484,6 +510,7 @@
 				95946D901C6D56040031B15B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		95946D911C6D56040031B15B /* Build configuration list for PBXNativeTarget "BoulderDashTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +519,7 @@
 				95946D931C6D56040031B15B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		95946D941C6D56040031B15B /* Build configuration list for PBXNativeTarget "BoulderDashUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +528,7 @@
 				95946D961C6D56040031B15B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
