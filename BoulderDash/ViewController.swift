@@ -18,6 +18,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var userID: UITextField
     @IBOutlet weak var firstName: UITextField
     @IBOutlet weak var lastName: UITextField
+    @IBOutlet weak var result: UILabel
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,9 +74,8 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         req.HTTPBody = NSData({"userId: 2222222222"})
 
         NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
-            print(NSString(data: data, encoding: NSUTF8StringEncoding))
+            result.text = NSString(data: data, encoding: NSUTF8StringEncoding)
         }
-        
     }
 }
 
