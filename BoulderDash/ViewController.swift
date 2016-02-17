@@ -63,7 +63,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     @IBAction func changeToTest(sender: AnyObject) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("TestController") as TestController
+        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("TestController") as! TestController
         
         self.presentViewController(nextViewController, animated:true, completion:nil)
     }
