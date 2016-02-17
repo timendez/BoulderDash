@@ -9,19 +9,16 @@
 import UIKit
 import Foundation
 import FBSDKCoreKit
-import FBSDKShareKit
+//import FBSDKShareKit
 import FBSDKLoginKit
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     let loginButton = FBSDKLoginButton()
     
-    @IBOutlet weak var userID: UITextField
-    @IBOutlet weak var firstName: UITextField
-    @IBOutlet weak var lastName: UITextField
-    @IBOutlet weak var result: UILabel
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = "BoulderDash"
         
         if (FBSDKAccessToken.currentAccessToken() != nil) {
             // User is already logged in, do work such as go to next view controller.
@@ -64,18 +61,11 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
         print("User Logged Out")
     }
     
-    @IBAction func addUser() {
-        let req = NSMutableURLRequest(NSURL("http://boulderdash.herokuapp.com/new-user"))
+    @IBAction func changeToTest(sender: AnyObject) {
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("TestController") as TestController
+        
+        self.presentViewController(nextViewController, animated:true, completion:nil)
     }
     
-    @IBAction func getUser() {
-        let req = NSMutableURLRequest(NSURL("http://boulderdash.herokuapp.com/user"))
-
-        req.HTTPBody = NSData({"userId: 2222222222"})
-
-        NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
-            result.text = NSString(data: data, encoding: NSUTF8StringEncoding)
-        }
-    }
 }
-
