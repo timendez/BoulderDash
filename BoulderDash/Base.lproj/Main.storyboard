@@ -69,12 +69,18 @@
                                 <rect key="frame" x="317" y="79" width="128" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="8bC-Xf-vdC" id="Ss6-ZS-1W9"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="firstName" destination="sXw-wD-qZE" id="AuS-LG-Nkk"/>
+                        <outlet property="lastName" destination="P7X-22-88n" id="qt8-Be-ar5"/>
                         <outlet property="result" destination="Cko-PO-hR4" id="FsM-Ti-kq3"/>
+                        <outlet property="userID" destination="4Dh-uq-0dK" id="GSS-Qy-jNn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

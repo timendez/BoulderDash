@@ -26,19 +26,40 @@ class TestController: UIViewController {
     }
     
     @IBAction func addUser() {
-        let req = NSMutableURLRequest(URL: NSURL(fileURLWithPath: "http://boulderdash.herokuapp.com/new-user"))
-        
-        print("This will add a user")
+        if let req = NSMutableURLRequest(URL: NSURL(fileURLWithPath: "http://boulderdash.herokuapp.com/new-user")) {
+            let session = NSURLSession.sharedSession()
+            req.HTTPMethod = "POST"
+            req.HTTPBody = NSData(base64EncodedString: "{\n\tuserId: " + userID + ",\n\tfirst: "
+                                  + firstName + ",\n\tlast: " + lastName + "\n}",
+                                  NSDataBase64DecodingOptions())
+            let download = session.dataTaskWithRequest(req)
+            
+            download.resume()
+        }
     }
     
     @IBAction func getUser() {
-        let req = NSMutableURLRequest(URL: NSURL(fileURLWithPath: "http://boulderdash.herokuapp.com/user"))
-        
-        req.HTTPBody = NSData(base64EncodedString: "{userId: 2222222222}", options:NSDataBase64DecodingOptions())
-        
-        NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
-            self.result.text = String(NSString(data: data!, encoding: NSUTF8StringEncoding))
+        if let url = NSURL(string: "http://boulderdash.herokuapp.com/user") {
+            let session = NSURLSession.sharedSession()
+            let download = session.dataTaskWithURL(url) {
+                (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+                
+                // print(data)
+                if let data = data {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        print(data)
+                    }
+                }
+                else {
+                    print("Could not fetch data")
+                }
+                
+            }
+            download.resume()
+        }
+        else {
+            print("Could not fetch URL")
         }
     }
-
+    
 }
