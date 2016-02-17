@@ -10,14 +10,10 @@ import UIKit
 import Foundation
 
 class TestController: UIViewController {
-    @IBOutlet weak var userID: UITextField!
-    @IBOutlet weak var firstName: UITextField!
-    @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var result: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
     }
     
     override func didReceiveMemoryWarning() {
@@ -26,20 +22,17 @@ class TestController: UIViewController {
     }
     
     @IBAction func addUser() {
-        if let req = NSMutableURLRequest(URL: NSURL(fileURLWithPath: "http://boulderdash.herokuapp.com/new-user")) {
-            let session = NSURLSession.sharedSession()
-            req.HTTPMethod = "POST"
-            req.HTTPBody = NSData(base64EncodedString: "{\n\tuserId: " + userID + ",\n\tfirst: "
-                                  + firstName + ",\n\tlast: " + lastName + "\n}",
-                                  NSDataBase64DecodingOptions())
-            let download = session.dataTaskWithRequest(req)
+        let req = NSMutableURLRequest(URL: NSURL(fileURLWithPath: "http://boulderdash.herokuapp.com/new-user"))
+        let session = NSURLSession.sharedSession()
+        req.HTTPMethod = "POST"
+        //req.HTTPBody = NSData(base64EncodedString: "{\n\tuserId: \(userID),\n\tfirst: \(firstName),\n\tlast: \(lastName)\n}", options: NSDataBase64DecodingOptions())
+        let download = session.dataTaskWithRequest(req)
             
-            download.resume()
-        }
+        download.resume()
     }
     
     @IBAction func getUser() {
-        if let url = NSURL(string: "http://boulderdash.herokuapp.com/user") {
+        if let url = NSURL(string: "http://boulderdash.herokuapp.com/user?userId=2222222222") {
             let session = NSURLSession.sharedSession()
             let download = session.dataTaskWithURL(url) {
                 (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
@@ -47,7 +40,11 @@ class TestController: UIViewController {
                 // print(data)
                 if let data = data {
                     dispatch_async(dispatch_get_main_queue()) {
-                        print(data)
+                        self.result.text = (NSString(data: data, encoding: NSUTF8StringEncoding) as! String)
+                        print(NSString(data: data, encoding: NSUTF8StringEncoding) as! String)
+                        
+                        self.result.lineBreakMode = NSLineBreakMode(rawValue: 1)!
+                        self.updateViewConstraints()
                     }
                 }
                 else {
