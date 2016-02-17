@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import Foundation
 import FBSDKCoreKit
 import FBSDKShareKit
 import FBSDKLoginKit
 
 class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     let loginButton = FBSDKLoginButton()
-
+    
+    @IBOutlet weak var userID: UITextField
+    @IBOutlet weak var firstName: UITextField
+    @IBOutlet weak var lastName: UITextField
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,6 +61,21 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
         print("User Logged Out")
+    }
+    
+    @IBAction func addUser() {
+        let req = NSMutableURLRequest(NSURL("http://boulderdash.herokuapp.com/new-user"))
+    }
+    
+    @IBAction func getUser() {
+        let req = NSMutableURLRequest(NSURL("http://boulderdash.herokuapp.com/user"))
+
+        req.HTTPBody = NSData({"userId: 2222222222"})
+
+        NSURLConnection.sendAsynchronousRequest(req, queue: NSOperationQueue.mainQueue()) {(response, data, error) in
+            print(NSString(data: data, encoding: NSUTF8StringEncoding))
+        }
+        
     }
 }
 
