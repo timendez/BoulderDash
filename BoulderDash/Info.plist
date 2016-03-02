@@ -12,10 +12,10 @@
 				<false/>
 				<key>NSIncludesSubdomains</key>
 				<true/>
-                		<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-                		<true/>
-        	        	<key>NSTemporaryExceptionMinimumTLSVersion</key>
-	                	<string>TLSv1.1</string>
+				<key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSTemporaryExceptionMinimumTLSVersion</key>
+				<string>TLSv1.1</string>
 			</dict>
 			<key>facebook.com</key>
 			<dict>
@@ -95,6 +95,11 @@
 	<key>CFBundleURLSchemes</key>
 	<array>
 		<string>fbauth2</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Walkway_Bold.ttf</string>
+		<string>Walkway_SemiBold.ttf</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

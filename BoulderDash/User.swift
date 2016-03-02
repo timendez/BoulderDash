@@ -15,11 +15,14 @@ struct User {
     var level: Int
     var exp: Int
     
+    var friends: [String]
+    
     init(firstName: String, lastName: String, id: String, level: Int, exp: Int) {
         self.firstName = firstName
         self.lastName = lastName
         self.id = id
         self.level = level
         self.exp = exp
+        self.friends = []
     }
 }

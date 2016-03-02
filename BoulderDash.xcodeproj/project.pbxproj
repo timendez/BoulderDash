@@ -17,6 +17,9 @@
 		95946D7F1C6D56040031B15B /* BoulderDashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95946D7E1C6D56040031B15B /* BoulderDashTests.swift */; };
 		95946D8A1C6D56040031B15B /* BoulderDashUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95946D891C6D56040031B15B /* BoulderDashUITests.swift */; };
 		95B5F6331C751BFB0025903E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B5F6321C751BFA0025903E /* User.swift */; };
+		A612960A1C865A26005B2CC5 /* Walkway_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A61296081C8659FD005B2CC5 /* Walkway_Bold.ttf */; };
+		A612960B1C865A26005B2CC5 /* Walkway_SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A61296091C8659FD005B2CC5 /* Walkway_SemiBold.ttf */; };
+		A612960D1C866682005B2CC5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A612960C1C866682005B2CC5 /* FeedViewController.swift */; };
 		CE8280FE1C750DD6002A14C6 /* TestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8280FD1C750DD6002A14C6 /* TestController.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +57,9 @@
 		95946D891C6D56040031B15B /* BoulderDashUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoulderDashUITests.swift; sourceTree = "<group>"; };
 		95946D8B1C6D56040031B15B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95B5F6321C751BFA0025903E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A61296081C8659FD005B2CC5 /* Walkway_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Walkway_Bold.ttf; sourceTree = "<group>"; };
+		A61296091C8659FD005B2CC5 /* Walkway_SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Walkway_SemiBold.ttf; sourceTree = "<group>"; };
+		A612960C1C866682005B2CC5 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		CE8280FD1C750DD6002A14C6 /* TestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,6 +102,7 @@
 		95946D5D1C6D56030031B15B = {
 			isa = PBXGroup;
 			children = (
+				A61296071C8659C5005B2CC5 /* Resources */,
 				95946D681C6D56040031B15B /* BoulderDash */,
 				95946D7D1C6D56040031B15B /* BoulderDashTests */,
 				95946D881C6D56040031B15B /* BoulderDashUITests */,
@@ -125,6 +132,7 @@
 				95946D701C6D56040031B15B /* Assets.xcassets */,
 				95946D721C6D56040031B15B /* LaunchScreen.storyboard */,
 				95946D751C6D56040031B15B /* Info.plist */,
+				A612960C1C866682005B2CC5 /* FeedViewController.swift */,
 			);
 			path = BoulderDash;
 			sourceTree = "<group>";
@@ -145,6 +153,15 @@
 				95946D8B1C6D56040031B15B /* Info.plist */,
 			);
 			path = BoulderDashUITests;
+			sourceTree = "<group>";
+		};
+		A61296071C8659C5005B2CC5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A61296081C8659FD005B2CC5 /* Walkway_Bold.ttf */,
+				A61296091C8659FD005B2CC5 /* Walkway_SemiBold.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,8 +269,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				95946D741C6D56040031B15B /* LaunchScreen.storyboard in Resources */,
+				A612960A1C865A26005B2CC5 /* Walkway_Bold.ttf in Resources */,
 				95946D711C6D56040031B15B /* Assets.xcassets in Resources */,
 				95946D6F1C6D56040031B15B /* Main.storyboard in Resources */,
+				A612960B1C865A26005B2CC5 /* Walkway_SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +299,7 @@
 			files = (
 				95B5F6331C751BFB0025903E /* User.swift in Sources */,
 				CE8280FE1C750DD6002A14C6 /* TestController.swift in Sources */,
+				A612960D1C866682005B2CC5 /* FeedViewController.swift in Sources */,
 				95946D6C1C6D56040031B15B /* ViewController.swift in Sources */,
 				95946D6A1C6D56040031B15B /* AppDelegate.swift in Sources */,
 			);

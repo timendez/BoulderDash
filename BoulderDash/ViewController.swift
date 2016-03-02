@@ -70,6 +70,7 @@ class ViewController: UIViewController, FBSDKLoginButtonDelegate {
                     
                     let name: String! = result["name"] as! String
                     print("Welcome \(name)")
+                    self.performSegueWithIdentifier("segueToFeed", sender: self)
                 }
             })
         }
