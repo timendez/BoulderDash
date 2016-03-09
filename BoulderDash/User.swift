@@ -17,12 +17,13 @@ struct User {
     
     var friends: [String]
     
-    init(firstName: String, lastName: String, id: String, level: Int, exp: Int) {
+    init(firstName: String, lastName: String, id: String) {
         self.firstName = firstName
         self.lastName = lastName
         self.id = id
-        self.level = level
-        self.exp = exp
+        self.level = -1
+        self.exp = -1
+        
         self.friends = []
     }
 }
