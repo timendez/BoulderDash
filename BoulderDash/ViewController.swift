@@ -13,21 +13,20 @@ import FBSDKLoginKit
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     let loginButton = FBSDKLoginButton()
-    
+
     // Global State
     var isLoggedIn = false;
-    var user: User?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         title = "BoulderDash"
 
         // Facebook Login
         if (FBSDKAccessToken.currentAccessToken() != nil) {
             print("User logged in...")
             beginLoadProcess()
-            
+
         } else {
             print("User not logged in...")
             let fbLoginButton: FBSDKLoginButton! = FBSDKLoginButton()
@@ -65,14 +64,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     * Begins the process of loading the user data from both Facebook and the DB
     */
     func beginLoadProcess() {
-        if((FBSDKAccessToken.currentAccessToken()) != nil) {
+        if(FBSDKAccessToken.currentAccessToken() != nil) {
             FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(large)"]).startWithCompletionHandler({ (connection, result, error) -> Void in
-                
                 if (error == nil) {
-                    self.user = User(firstName: result["first_name"] as! String!, lastName: result["last_name"] as! String!, id: result["id"] as! String!)
-                    print("Received user with name \(self.user?.firstName) \(self.user?.lastName) and id \(self.user?.id)")
-                    ServerOverlord.getUserDetails(self.user!)
-                    print("User now has name \(self.user?.firstName) \(self.user?.lastName) and id \(self.user?.id)")
+                    ServerOverlord.user = User(firstName: result["first_name"] as! String!, lastName: result["last_name"] as! String!, id: result["id"] as! String!)
+                    ServerOverlord.getUser()
                 }
             })
         }
@@ -86,16 +82,14 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         print("User Logged Out")
     }
     
-   /*
-    *
-    */
+/*
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let dest = segue.destinationViewController as? LoadViewController {
             print("In prepareForSegue in Login")
             dest.user = user
         }
     }
-/*
+
     @IBAction func changeToTest(sender: AnyObject) {
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewControllerWithIdentifier("TestController") as! TestController

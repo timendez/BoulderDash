@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct User {
+class User {
     var firstName: String
     var lastName: String
     var id: String

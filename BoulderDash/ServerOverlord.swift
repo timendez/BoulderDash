@@ -6,52 +6,95 @@
 //  Copyright © 2016 Matt&Tim. All rights reserved.
 //
 
-/*
-    This class is responsible for sending and receiving requests and responses to the server
-*/
-
 import Foundation
 
 protocol ServerResponseDelegate {
-    func serverDidRespond()
+   /*
+    * Informs its delegate that the server has sent back an HTTP response.
+    *
+    * @sender A string representing the ServerOverlord method that called the delegate.
+    *         Allows the same delegate to respond to serverDidRespond in different ways, if needed.
+    */
+    func serverDidRespond(sender: String)
 }
 
+
+/*
+This class is responsible for sending and receiving requests and responses to the server.
+*/
 class ServerOverlord {
     
     static var delegate: ServerResponseDelegate?
+    static var user: User?
     
-    static func addUser(user: User) {
-        let req = NSMutableURLRequest(URL: NSURL(fileURLWithPath: "http://boulderdash.herokuapp.com/new-user"))
-        let session = NSURLSession.sharedSession()
-        req.HTTPMethod = "POST"
-        //req.HTTPBody = NSData(base64EncodedString: "{\n\tuserId: \(userID),\n\tfirst: \(firstName),\n\tlast: \(lastName)\n}", options: NSDataBase64DecodingOptions())
-        let download = session.dataTaskWithRequest(req)
+   /*
+    * Adds a new user to the database with id, firstName, and lastName
+    */
+    static func addUser() {
+        print ("Sending http://boulderdash.herokuapp.com/new-user?userId=\(user!.id)&first=\(user!.firstName)&last=\(user!.lastName)")
         
+        let req = NSMutableURLRequest(URL: NSURL(fileURLWithPath: "http://boulderdash.herokuapp.com/new-user?userId=\(user!.id)&first=\(user!.firstName)&last=\(user!.lastName)"))
+        let session = NSURLSession.sharedSession()
+        
+        req.HTTPMethod = "POST"
+        
+        let download = session.dataTaskWithRequest(req)
         download.resume()
+    }
 
+   /*
+    * Checks to see if the current facebook user is in the database.
+    * If yes, gets the users level and exp from our db.
+    * If no, calls addUser() and assigns level = 1 and exp = 0
+    *
+    * Calls delegate method serverDidRespond when finished
+    */
+    static func getUser() {
+        print("Sending http://boulderdash.herokuapp.com/user?userId=\(user!.id)")
+        let url = NSURL(string: "http://boulderdash.herokuapp.com/user?userId=\(user!.id)")
+        let session = NSURLSession.sharedSession()
+        let download = session.dataTaskWithURL(url!) {
+            (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+            if let data = data {
+                let json = JSON(data: data)
+                
+                if json == [] {
+                    addUser()
+                }
+                user!.level = json["level"] ? json["level"].intValue : 1
+                user!.exp = json["exp"] ? json["exp"].intValue : 0
+                print("About to call serverDidRespond")
+                delegate?.serverDidRespond("getUser")
+            }
+            else {
+                print("ERROR: Could not fetch data in getUser")
+            }
+        }
+        download.resume()
     }
     
-    static func getUserDetails(var user: User) {
-        
-        if let url = NSURL(string: "http://boulderdash.herokuapp.com/user?userId=\(user.id)") {
-            let session = NSURLSession.sharedSession()
-            let download = session.dataTaskWithURL(url) {
-                (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
-                if let data = data {
-                    let json = JSON(data: data)
-                    user.level = json["level"] ? json["level"].intValue : -1
-                    user.exp = json["exp"] ? json["exp"].intValue : -1
-                    print("About to call serverDidRespond")
-                    delegate?.serverDidRespond()
-                }
-                else {
-                    print("Could not fetch data in getUserDetails")
-                }
+   /*
+    * Gets the user's friends' most recently completed climbs (the user's friend feed)
+    *
+    * Calls delegate method serverDidRespond when finished
+    */
+    static func getFriendFeed() {
+        print("Sending http://boulderdash.herokuapp.com/user-feed?userIds=\(user!.friends)")
+        let url = NSURL(string: "http://boulderdash.herokuapp.com/user-feed?userIds=\(user!.friends)")
+        let session = NSURLSession.sharedSession()
+        let download = session.dataTaskWithURL(url!) {
+            (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+            if let data = data {
+                let json = JSON(data: data)
+                print("Got friend feed from our DB")
+                print(json)
+                //delegate?.serverDidRespond("getFeed")
             }
-            download.resume()
+            else {
+                print("ERROR: Could not fetch data in getFriendFeed")
+            }
         }
-        else {
-            print("Could not fetch URL in getUserDetails")
-        }
+        download.resume()
     }
 }
+

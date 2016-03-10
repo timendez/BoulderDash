@@ -22,6 +22,8 @@
             <string>WalkwayBold</string>
             <string>WalkwayBold</string>
             <string>WalkwayBold</string>
+            <string>WalkwayBold</string>
+            <string>WalkwayBold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -61,7 +63,7 @@
                                         <rect key="frame" x="0.0" y="65" width="560" height="399"/>
                                         <subviews>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vkt-jA-Ycm">
-                                                <rect key="frame" x="0.0" y="92" width="100" height="216"/>
+                                                <rect key="frame" x="0.0" y="92" width="430" height="216"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="aDE-9f-DZN"/>
                                                 </constraints>
@@ -71,19 +73,19 @@
                                                 </connections>
                                             </pickerView>
                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" verticalHuggingPriority="500" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="WCU-dI-2mZ" userLabel="Switches">
-                                                <rect key="frame" x="120" y="138" width="440" height="124"/>
+                                                <rect key="frame" x="450" y="138" width="110" height="124"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uKz-Z7-Xb6" userLabel="Flash Stack">
-                                                        <rect key="frame" x="0.0" y="0.0" width="440" height="22"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="110" height="22"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBI-2v-xPy" userLabel="Flashed">
-                                                                <rect key="frame" x="0.0" y="0.0" width="400" height="22"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="27" height="22"/>
                                                                 <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="12"/>
                                                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4DB-5a-z7s">
-                                                                <rect key="frame" x="405" y="0.0" width="37" height="22"/>
+                                                                <rect key="frame" x="32" y="0.0" width="80" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="35" id="7Na-03-2er"/>
                                                                     <constraint firstAttribute="height" constant="22" id="A51-A3-NIK"/>
@@ -98,16 +100,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="des-8I-bkZ" userLabel="Downclimb Stack">
-                                                        <rect key="frame" x="0.0" y="34" width="440" height="22"/>
+                                                        <rect key="frame" x="0.0" y="34" width="110" height="22"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downclimb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20L-sy-HZz">
-                                                                <rect key="frame" x="0.0" y="0.0" width="400" height="22"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="70" height="22"/>
                                                                 <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="12"/>
                                                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UYs-id-7Z4">
-                                                                <rect key="frame" x="405" y="0.0" width="37" height="22"/>
+                                                                <rect key="frame" x="75" y="0.0" width="37" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="UYs-id-7Z4" secondAttribute="height" multiplier="35:22" id="Hhj-JI-ICm"/>
                                                                     <constraint firstAttribute="height" constant="22" id="i55-9o-mmJ"/>
@@ -122,16 +124,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="huP-RJ-U5X" userLabel="Campus Stack">
-                                                        <rect key="frame" x="0.0" y="68" width="440" height="22"/>
+                                                        <rect key="frame" x="0.0" y="68" width="110" height="22"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Campus" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TpZ-cD-xoA">
-                                                                <rect key="frame" x="0.0" y="0.0" width="400" height="22"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="56" height="22"/>
                                                                 <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="12"/>
                                                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V9d-6a-fAl">
-                                                                <rect key="frame" x="405" y="0.0" width="37" height="22"/>
+                                                                <rect key="frame" x="61" y="0.0" width="51" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="35" id="9PD-ob-0k4"/>
                                                                     <constraint firstAttribute="height" constant="22" id="Bki-9h-ePI"/>
@@ -146,16 +148,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="634-MO-9yX" userLabel="ToeTouch Stack">
-                                                        <rect key="frame" x="0.0" y="102" width="440" height="22"/>
+                                                        <rect key="frame" x="0.0" y="102" width="110" height="22"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toe-Touch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1KS-sH-GtC">
-                                                                <rect key="frame" x="0.0" y="0.0" width="400" height="22"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="56" height="22"/>
                                                                 <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="12"/>
                                                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9gc-jV-OAh">
-                                                                <rect key="frame" x="405" y="0.0" width="37" height="22"/>
+                                                                <rect key="frame" x="61" y="0.0" width="51" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="9gc-jV-OAh" secondAttribute="height" multiplier="35:22" id="4tp-3C-Uuh"/>
                                                                     <constraint firstAttribute="height" constant="22" id="l5d-rN-QU1"/>
@@ -237,6 +239,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="GuM-Y4-tPB" secondAttribute="bottom" id="95p-aE-tWo"/>
+                                    <constraint firstAttribute="trailing" secondItem="qXw-h9-5LE" secondAttribute="trailing" id="DjA-3V-3g4"/>
                                     <constraint firstItem="IJk-9F-4XN" firstAttribute="top" secondItem="bnE-Yv-RqQ" secondAttribute="top" constant="10" id="GRR-gU-iwx"/>
                                     <constraint firstItem="4I8-NI-UCu" firstAttribute="top" secondItem="qXw-h9-5LE" secondAttribute="bottom" constant="25" id="MMd-4Y-Mo4"/>
                                     <constraint firstItem="xlg-XY-Xbd" firstAttribute="top" secondItem="IJk-9F-4XN" secondAttribute="bottom" constant="20" id="NhA-lb-S6j"/>
@@ -368,14 +371,20 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nS0-H1-MeF" userLabel="Metadata">
                                         <rect key="frame" x="0.0" y="32" width="601" height="80"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wm-3I-sfU">
-                                                <rect key="frame" x="0.0" y="0.0" width="392" height="80"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wm-3I-sfU">
+                                                <rect key="frame" x="0.0" y="0.0" width="271" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="zhF-Hl-Iht"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="17"/>
                                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name (First, Last)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-zW-WSW" customClass="SegueLabel" customModule="BoulderDash" customModuleProvider="target">
-                                                <rect key="frame" x="392" y="0.0" width="129" height="80"/>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name (First, Last)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-zW-WSW" customClass="SegueLabel" customModule="BoulderDash" customModuleProvider="target">
+                                                <rect key="frame" x="271" y="0.0" width="250" height="80"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="5q9-Tm-7TV"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="17"/>
                                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -390,6 +399,8 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstItem="7Wm-3I-sfU" firstAttribute="leading" secondItem="nS0-H1-MeF" secondAttribute="leading" constant="10" id="FyA-7k-2Uj"/>
+                                            <constraint firstAttribute="trailing" secondItem="Qkp-GO-NRi" secondAttribute="trailing" id="HCa-CS-v9n"/>
+                                            <constraint firstItem="Qkp-GO-NRi" firstAttribute="leading" secondItem="dXG-zW-WSW" secondAttribute="trailing" id="g7r-7r-xJ6"/>
                                         </constraints>
                                     </stackView>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dg8-OI-NAD">
@@ -398,6 +409,48 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jME-rR-nFN">
                                         <rect key="frame" x="0.0" y="114" width="601" height="425"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="UYW-tB-dX9" customClass="FeedTableViewCell" customModule="BoulderDash" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="601" height="44"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UYW-tB-dX9" id="Dhq-gF-RY7">
+                                                    <rect key="frame" x="0.0" y="0.0" width="601" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NjE-dQ-c3g">
+                                                            <rect key="frame" x="1" y="0.0" width="62" height="43"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="43" id="IFF-RY-XgF"/>
+                                                                <constraint firstAttribute="width" constant="80" id="Skn-ay-v6h"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="3m ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqC-o0-unT">
+                                                            <rect key="frame" x="537" y="11" width="56" height="21"/>
+                                                            <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="14"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Jim Bob Jones climbed a V9 feet-only" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ug-NB-njB">
+                                                            <rect key="frame" x="71" y="11" width="344" height="21"/>
+                                                            <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="20"/>
+                                                            <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="1Ug-NB-njB" firstAttribute="leading" secondItem="NjE-dQ-c3g" secondAttribute="trailing" constant="20" id="3Jx-PP-y9F"/>
+                                                        <constraint firstItem="NjE-dQ-c3g" firstAttribute="centerY" secondItem="Dhq-gF-RY7" secondAttribute="centerY" id="BdM-QP-y0O"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="IqC-o0-unT" secondAttribute="trailing" id="Fyo-9r-s1g"/>
+                                                        <constraint firstItem="NjE-dQ-c3g" firstAttribute="leading" secondItem="Dhq-gF-RY7" secondAttribute="leadingMargin" constant="10" id="mNx-CG-yx4"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="eventTime" destination="IqC-o0-unT" id="DMh-Y8-xUL"/>
+                                                    <outlet property="friendImage" destination="NjE-dQ-c3g" id="rbK-TY-8FW"/>
+                                                    <outlet property="headline" destination="1Ug-NB-njB" id="JZb-HR-Uuw"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDW-Zz-KR0">
                                         <rect key="frame" x="0.0" y="539" width="601" height="40"/>
@@ -442,6 +495,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="level" destination="7Wm-3I-sfU" id="1b1-hY-Gtt"/>
                         <outlet property="nameLabel" destination="dXG-zW-WSW" id="ZRp-Xg-f4f"/>
                         <outlet property="progress" destination="dg8-OI-NAD" id="xCx-No-Nsz"/>
                         <outlet property="userImage" destination="Qkp-GO-NRi" id="2k9-r4-wzX"/>
