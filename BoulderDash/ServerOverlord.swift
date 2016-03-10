@@ -28,16 +28,33 @@ class ServerOverlord {
     static var user: User?
     
    /*
+    *
+    */
+    static func addClimb(name: String, loc: String, rating: Int, flash: Bool, down: Bool, campus: Bool, toe: Bool, outdoor: Bool) {
+        let climbDate = NSDate()
+        
+        print("Sending http://boulderdash.herokuapp.com/new-climb?userId=\(user!.id)&climbName=\(name)&location=\(loc)&rating=\(rating)&outdoor=\(outdoor)&flash=\(flash)&campus=\(campus)&toetouch=\(toe)&climbDate=\(climbDate.description)")
+        
+        let req = NSMutableURLRequest(URL: NSURL(string: "http://boulderdash.herokuapp.com/new-climb?userId=\(user!.id)&climbName=\(name)&location=\(loc)&rating=\(rating)&outdoor=\(outdoor)&flash=\(flash)&campus=\(campus)&toetouch=\(toe)&climbDate=\(climbDate.description)")!)
+        let session = NSURLSession.sharedSession()
+        
+        req.HTTPMethod = "POST"
+         
+        let download = session.dataTaskWithRequest(req)
+        download.resume()
+    }
+    
+   /*
     * Adds a new user to the database with id, firstName, and lastName
     */
     static func addUser() {
         print ("Sending http://boulderdash.herokuapp.com/new-user?userId=\(user!.id)&first=\(user!.firstName)&last=\(user!.lastName)")
         
-        let req = NSMutableURLRequest(URL: NSURL(fileURLWithPath: "http://boulderdash.herokuapp.com/new-user?userId=\(user!.id)&first=\(user!.firstName)&last=\(user!.lastName)"))
+        let req = NSMutableURLRequest(URL: NSURL(string: "http://boulderdash.herokuapp.com/new-user?userId=\(user!.id)&first=\(user!.firstName)&last=\(user!.lastName)")!)
         let session = NSURLSession.sharedSession()
         
         req.HTTPMethod = "POST"
-        
+
         let download = session.dataTaskWithRequest(req)
         download.resume()
     }
@@ -58,7 +75,7 @@ class ServerOverlord {
             if let data = data {
                 let json = JSON(data: data)
                 
-                if json == [] {
+                if json["name"].stringValue == "error" {
                     addUser()
                 }
                 user!.level = json["level"] ? json["level"].intValue : 1

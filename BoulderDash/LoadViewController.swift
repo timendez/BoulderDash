@@ -42,6 +42,7 @@ class LoadViewController: UIViewController, ServerResponseDelegate {
                     ServerOverlord.user?.friends = result as! [String]
                     self.performSegueWithIdentifier("segueToFeed", sender: self)
                 })
+                print("Just sent graphRequest")
             }
         }
     }
