@@ -28,7 +28,7 @@ class NewClimbViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
         picker?.delegate = self
         picker?.dataSource = self
-        ServerOverlord.delegate = self
+        //ServerOverlord.delegate = self
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {

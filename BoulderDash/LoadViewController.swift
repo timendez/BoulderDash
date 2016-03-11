@@ -14,7 +14,7 @@ import FBSDKLoginKit
 class LoadViewController: UIViewController, ServerResponseDelegate {
 
     @IBOutlet var loadLabel: UILabel?
-    
+    var friends: JSON?
 
     override func viewWillAppear(animated: Bool) {
         self.navigationController?.navigationBarHidden = true
@@ -22,7 +22,17 @@ class LoadViewController: UIViewController, ServerResponseDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        getFBFriends()
         ServerOverlord.delegate = self
+    }
+    
+    func getFBFriends() {
+        FBSDKGraphRequest(graphPath: "me/friends", parameters: ["fields": "id, name, first_name, last_name, picture.type(large)"]).startWithCompletionHandler({ (connection, result, error) -> Void in
+            if (error == nil) {
+                let jsonFriends = JSON(result)
+                self.friends = jsonFriends["data"]
+            }
+        })
     }
 
     /*
@@ -32,19 +42,8 @@ class LoadViewController: UIViewController, ServerResponseDelegate {
     */
     func serverDidRespond(sender: String) {
         print("In serverDidRespond")
-        if (FBSDKAccessToken.currentAccessToken() != nil) {
-            // Check if coming back from a getUser Request
-            if (sender == "getUser") {
-                print("About to send graphRequest")
-                FBSDKGraphRequest(graphPath: "me/friends", parameters: ["fields" : "[]"]).startWithCompletionHandler({ (connection, result, error) -> Void in
-                    print("Back from requesting friends")
-                    print(result)
-                    ServerOverlord.user?.friends = result as! [String]
-                    self.performSegueWithIdentifier("segueToFeed", sender: self)
-                })
-                print("Just sent graphRequest")
-            }
-        }
+        ServerOverlord.user?.friends = friends
+        self.performSegueWithIdentifier("segueToFeed", sender: self)
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
