@@ -15,6 +15,8 @@ protocol ViewTouchedDelegate{
 
 class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDelegate, UITableViewDataSource {
     
+    let levels = ["1": 0, "2": 200, "3": 400, "4": 800, "5": 1600, "6": 3200, "7": 6400, "8": 12800, "9": 25600, "10": 51200, "11": 102400, "12": 204800, "13": 409600, "14": 811200, "15": 1160000, "16": 5120000, "17": 10000000, "18": 15000000, "19": 19000000, "20": 25500000, "21": 35500000]
+    
     @IBOutlet var level: UILabel?
     @IBOutlet var nameLabel: SegueLabel?
     @IBOutlet var userImage: SegueImage?
@@ -37,7 +39,7 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
         
         nameLabel?.text = "\((ServerOverlord.user?.firstName)!) \((ServerOverlord.user?.lastName)!)"
         level?.text = String((ServerOverlord.user?.level)!)
-        progress?.setProgress(0.73, animated: true)
+        progress?.setProgress(Float((ServerOverlord.user?.exp)!) / Float(levels[String((ServerOverlord.user?.level)! + 1)]!), animated: true)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,6 +64,11 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
     
     func viewWasTouched() {
         performSegueWithIdentifier("segueToHistory", sender: self)
+    }
+    
+    @IBAction func unwindFromNewClimb(segue: UIStoryboardSegue) {
+        level?.text = String((ServerOverlord.user?.level)!)
+        progress?.setProgress(Float((ServerOverlord.user?.exp)!) / Float(levels[String((ServerOverlord.user?.level)! + 1)]!), animated: true)
     }
 }
 

@@ -40,7 +40,16 @@ class ServerOverlord {
         
         req.HTTPMethod = "POST"
          
-        let download = session.dataTaskWithRequest(req)
+        let download = session.dataTaskWithRequest(req, completionHandler: {
+            (data, res, error) -> Void in
+            
+            let json = JSON(data: data!)
+            
+            user?.exp = json["newExp"].intValue
+            user?.level = json["newLevel"].intValue
+            
+            self.delegate?.serverDidRespond("addClimb")
+        })
         download.resume()
     }
     
