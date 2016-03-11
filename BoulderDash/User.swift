@@ -15,7 +15,7 @@ class User {
     var level: Int
     var exp: Int
     
-    var friends: [String]
+    var friends: JSON?
     
     init(firstName: String, lastName: String, id: String) {
         self.firstName = firstName
