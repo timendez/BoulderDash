@@ -44,7 +44,9 @@ class NewClimbViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     func serverDidRespond(sender: String) {
-        if 
+        if sender == "addClimb" {
+            performSegueWithIdentifier("backFromNewClimb", sender: self)
+        }
     }
     
     @IBAction func newClimb() {
