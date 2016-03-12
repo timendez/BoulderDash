@@ -72,7 +72,11 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 }
             })
         }
-        performSegueWithIdentifier("segueToLoad", sender: self)
+        NSOperationQueue.mainQueue().addOperationWithBlock {
+            NSOperationQueue.mainQueue().addOperationWithBlock {
+                self.performSegueWithIdentifier("segueToLoad", sender: self)
+            }
+        }
     }
     
    /*

@@ -45,7 +45,9 @@ class NewClimbViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     func serverDidRespond(sender: String, data: JSON) {
         if sender == "addClimb" {
-            performSegueWithIdentifier("backFromNewClimb", sender: self)
+            NSOperationQueue.mainQueue().addOperationWithBlock {
+                self.performSegueWithIdentifier("backFromNewClimb", sender: self)
+            }
         }
     }
     

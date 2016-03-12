@@ -49,6 +49,9 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("hello")
+        print(friendFeed!)
+        print("goodbye")
         if let friendFeed = friendFeed {
             return friendFeed.count
         }
@@ -84,7 +87,9 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
     }
 
     func viewWasTouched() {
-        performSegueWithIdentifier("segueToHistory", sender: self)
+        NSOperationQueue.mainQueue().addOperationWithBlock {
+            self.performSegueWithIdentifier("segueToHistory", sender: self)
+        }
     }
     
     @IBAction func unwindFromNewClimb(segue: UIStoryboardSegue) {
