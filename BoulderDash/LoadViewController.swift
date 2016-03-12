@@ -24,13 +24,16 @@ class LoadViewController: UIViewController, ServerResponseDelegate {
         super.viewDidLoad()
         getFBFriends()
         ServerOverlord.delegate = self
+        
+        print(NSDate().description)
     }
     
     func getFBFriends() {
-        FBSDKGraphRequest(graphPath: "me/friends", parameters: ["fields": "id, name, first_name, last_name, picture.type(large)"]).startWithCompletionHandler({ (connection, result, error) -> Void in
+        FBSDKGraphRequest(graphPath: "me/friends", parameters: ["fields": "id, name, first_name, last_name, picture.type(small)"]).startWithCompletionHandler({ (connection, result, error) -> Void in
             if (error == nil) {
                 let jsonFriends = JSON(result)
-                self.friends = jsonFriends["data"]
+                ServerOverlord.user?.friends = jsonFriends["data"].arrayValue
+                print(ServerOverlord.user?.friends)
             }
         })
     }
@@ -40,9 +43,8 @@ class LoadViewController: UIViewController, ServerResponseDelegate {
     *
     * Fulfills ServerResponseDelegate.
     */
-    func serverDidRespond(sender: String) {
+    func serverDidRespond(sender: String, data: JSON) {
         print("In serverDidRespond")
-        ServerOverlord.user?.friends = friends
         self.performSegueWithIdentifier("segueToFeed", sender: self)
     }
     

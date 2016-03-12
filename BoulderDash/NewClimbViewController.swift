@@ -27,8 +27,8 @@ class NewClimbViewController: UIViewController, UIPickerViewDataSource, UIPicker
         super.viewDidLoad()
         
         picker?.delegate = self
-        picker?.dataSource = self
-        //ServerOverlord.delegate = self
+        picker?.dataSource = self        
+        ServerOverlord.delegate = self
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -43,7 +43,7 @@ class NewClimbViewController: UIViewController, UIPickerViewDataSource, UIPicker
         return ratings[row]
     }
     
-    func serverDidRespond(sender: String) {
+    func serverDidRespond(sender: String, data: JSON) {
         if sender == "addClimb" {
             performSegueWithIdentifier("backFromNewClimb", sender: self)
         }

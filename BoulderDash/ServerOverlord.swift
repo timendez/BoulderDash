@@ -15,7 +15,7 @@ protocol ServerResponseDelegate {
     * @sender A string representing the ServerOverlord method that called the delegate.
     *         Allows the same delegate to respond to serverDidRespond in different ways, if needed.
     */
-    func serverDidRespond(sender: String)
+    func serverDidRespond(sender: String, data: JSON)
 }
 
 
@@ -33,9 +33,8 @@ class ServerOverlord {
     static func addClimb(name: String, loc: String, rating: Int, flash: Bool, down: Bool, campus: Bool, toe: Bool, outdoor: Bool) {
         let climbDate = NSDate()
         
-        print("Sending http://boulderdash.herokuapp.com/new-climb?userId=\(user!.id)&climbName=\(name)&location=\(loc)&rating=\(rating)&outdoor=\(outdoor)&flash=\(flash)&campus=\(campus)&toetouch=\(toe)&climbDate=\(climbDate.description)")
-        
-        let req = NSMutableURLRequest(URL: NSURL(string: "http://boulderdash.herokuapp.com/new-climb?userId=\(user!.id)&climbName=\(name)&location=\(loc)&rating=\(rating)&outdoor=\(outdoor)&flash=\(flash)&campus=\(campus)&toetouch=\(toe)&climbDate=\(climbDate.description)")!)
+        print("Sending http://boulderdash.herokuapp.com/new-climb?userId=\(user!.id)&climbName=\(name)&location=\(loc)&rating=\(rating)&outdoor=\(outdoor)&flash=\(flash)&campus=\(campus)&toetouch=\(toe)&climbDate=\((climbDate.description).stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet()))")
+        let req = NSMutableURLRequest(URL: NSURL(string: "http://boulderdash.herokuapp.com/new-climb?userId=\(user!.id)&climbName=\(name)&location=\(loc)&rating=\(rating)&outdoor=\(outdoor)&flash=\(flash)&campus=\(campus)&toetouch=\(toe)&climbDate=\((climbDate.description).stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!)")!)
         let session = NSURLSession.sharedSession()
         
         req.HTTPMethod = "POST"
@@ -48,7 +47,7 @@ class ServerOverlord {
             user?.exp = json["newExp"].intValue
             user?.level = json["newLevel"].intValue
             
-            self.delegate?.serverDidRespond("addClimb")
+            self.delegate?.serverDidRespond("addClimb", data: nil)
         })
         download.resume()
     }
@@ -84,13 +83,13 @@ class ServerOverlord {
             if let data = data {
                 let json = JSON(data: data)
                 
-                if json["name"].stringValue == "error" {
+                if json == [] {
                     addUser()
                 }
                 user!.level = json["level"] ? json["level"].intValue : 1
                 user!.exp = json["exp"] ? json["exp"].intValue : 0
                 print("About to call serverDidRespond")
-                delegate?.serverDidRespond("getUser")
+                delegate?.serverDidRespond("getUser", data: nil)
             }
             else {
                 print("ERROR: Could not fetch data in getUser")
@@ -105,8 +104,17 @@ class ServerOverlord {
     * Calls delegate method serverDidRespond when finished
     */
     static func getFriendFeed() {
-        print("Sending http://boulderdash.herokuapp.com/user-feed?userIds=\(user!.friends)")
-        let url = NSURL(string: "http://boulderdash.herokuapp.com/user-feed?userIds=\(user!.friends)")
+        var tempFriends: String = ""
+        
+        for (ndx, friend) in (user?.friends)!.enumerate() {
+            tempFriends += friend["id"].stringValue
+            if (ndx != (user?.friends?.count)! - 1) {
+                tempFriends += ","
+            }
+        }
+        
+        print("Sending http://boulderdash.herokuapp.com/user-feed?userIds=\(tempFriends)")
+        let url = NSURL(string: "http://boulderdash.herokuapp.com/user-feed?userIds=\(tempFriends)")
         let session = NSURLSession.sharedSession()
         let download = session.dataTaskWithURL(url!) {
             (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
@@ -114,7 +122,7 @@ class ServerOverlord {
                 let json = JSON(data: data)
                 print("Got friend feed from our DB")
                 print(json)
-                //delegate?.serverDidRespond("getFeed")
+                delegate?.serverDidRespond("getFeed", data: json)
             }
             else {
                 print("ERROR: Could not fetch data in getFriendFeed")
