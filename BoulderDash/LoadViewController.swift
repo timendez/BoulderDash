@@ -36,7 +36,6 @@ class LoadViewController: UIViewController, ServerResponseDelegate {
                 
                 // Mfin race condition fix
                 ServerOverlord.getFriendFeed()
-                print(ServerOverlord.user?.friends)
             }
         })
     }
