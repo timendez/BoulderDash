@@ -23,7 +23,6 @@
             <string>WalkwayBold</string>
             <string>WalkwayBold</string>
             <string>WalkwayBold</string>
-            <string>WalkwayBold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -51,12 +50,12 @@
                                         <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IgA-tw-HhJ" userLabel="Name">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IgA-tw-HhJ" userLabel="Name">
                                         <rect key="frame" x="0.0" y="40" width="560" height="42"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="500" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Location" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xlg-XY-Xbd" userLabel="Location">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="500" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Location" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xlg-XY-Xbd" userLabel="Location">
                                         <rect key="frame" x="0.0" y="82" width="560" height="25"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="y41-Hb-Zc3"/>
@@ -64,10 +63,10 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="800" misplaced="YES" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qXw-h9-5LE" userLabel="Content Stack">
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="800" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qXw-h9-5LE" userLabel="Content Stack">
                                         <rect key="frame" x="0.0" y="107" width="560" height="357"/>
                                         <subviews>
-                                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vkt-jA-Ycm">
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vkt-jA-Ycm">
                                                 <rect key="frame" x="0.0" y="71" width="100" height="216"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="aDE-9f-DZN"/>
@@ -77,7 +76,7 @@
                                                     <outlet property="delegate" destination="WCq-xV-0VP" id="SWq-cv-cVd"/>
                                                 </connections>
                                             </pickerView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" verticalHuggingPriority="500" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" misplaced="YES" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="WCU-dI-2mZ" userLabel="Switches">
+                                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="500" verticalHuggingPriority="500" horizontalCompressionResistancePriority="500" verticalCompressionResistancePriority="500" axis="vertical" distribution="equalSpacing" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="WCU-dI-2mZ" userLabel="Switches">
                                                 <rect key="frame" x="120" y="117" width="440" height="124"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uKz-Z7-Xb6" userLabel="Flash Stack">
@@ -89,7 +88,7 @@
                                                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <switch opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4DB-5a-z7s">
+                                                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4DB-5a-z7s">
                                                                 <rect key="frame" x="405" y="0.0" width="37" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="35" id="7Na-03-2er"/>
@@ -113,7 +112,7 @@
                                                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UYs-id-7Z4">
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UYs-id-7Z4">
                                                                 <rect key="frame" x="405" y="0.0" width="37" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="UYs-id-7Z4" secondAttribute="height" multiplier="35:22" id="Hhj-JI-ICm"/>
@@ -137,7 +136,7 @@
                                                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V9d-6a-fAl">
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="V9d-6a-fAl">
                                                                 <rect key="frame" x="405" y="0.0" width="37" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="35" id="9PD-ob-0k4"/>
@@ -161,7 +160,7 @@
                                                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9gc-jV-OAh">
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9gc-jV-OAh">
                                                                 <rect key="frame" x="405" y="0.0" width="37" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="9gc-jV-OAh" secondAttribute="height" multiplier="35:22" id="4tp-3C-Uuh"/>
@@ -181,10 +180,10 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="200" misplaced="YES" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="4I8-NI-UCu" userLabel="Indoor/Outdoor Stack">
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="200" distribution="equalCentering" translatesAutoresizingMaskIntoConstraints="NO" id="4I8-NI-UCu" userLabel="Indoor/Outdoor Stack">
                                         <rect key="frame" x="0.0" y="464" width="560" height="22"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="500" verticalHuggingPriority="500" misplaced="YES" text="Outdoor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFo-7U-zGV">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="500" verticalHuggingPriority="500" text="Outdoor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EFo-7U-zGV">
                                                 <rect key="frame" x="0.0" y="0.0" width="475" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="60" id="jMp-DG-Emn"/>
@@ -193,7 +192,7 @@
                                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aCD-8v-hjL">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aCD-8v-hjL">
                                                 <rect key="frame" x="525" y="0.0" width="37" height="22"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="35" id="4zK-5h-thg"/>
@@ -447,15 +446,9 @@
                                                                 <constraint firstAttribute="width" constant="80" id="Skn-ay-v6h"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="3m ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IqC-o0-unT">
-                                                            <rect key="frame" x="537" y="11" width="56" height="21"/>
-                                                            <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="14"/>
-                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Jim Bob Jones climbed a V9 feet-only" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ug-NB-njB">
-                                                            <rect key="frame" x="71" y="11" width="344" height="21"/>
-                                                            <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="20"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Jim Bob Jones climbed a V9 feet-only yessir he did indeedy yup" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ug-NB-njB">
+                                                            <rect key="frame" x="71" y="0.0" width="498" height="43"/>
+                                                            <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="15"/>
                                                             <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -463,12 +456,12 @@
                                                     <constraints>
                                                         <constraint firstItem="1Ug-NB-njB" firstAttribute="leading" secondItem="NjE-dQ-c3g" secondAttribute="trailing" constant="20" id="3Jx-PP-y9F"/>
                                                         <constraint firstItem="NjE-dQ-c3g" firstAttribute="centerY" secondItem="Dhq-gF-RY7" secondAttribute="centerY" id="BdM-QP-y0O"/>
-                                                        <constraint firstAttribute="trailingMargin" secondItem="IqC-o0-unT" secondAttribute="trailing" id="Fyo-9r-s1g"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="1Ug-NB-njB" secondAttribute="trailing" constant="24" id="Q2V-zq-tWo"/>
                                                         <constraint firstItem="NjE-dQ-c3g" firstAttribute="leading" secondItem="Dhq-gF-RY7" secondAttribute="leadingMargin" constant="10" id="mNx-CG-yx4"/>
+                                                        <constraint firstItem="1Ug-NB-njB" firstAttribute="leading" secondItem="NjE-dQ-c3g" secondAttribute="trailing" constant="8" id="mXR-wy-knf"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <outlet property="eventTime" destination="IqC-o0-unT" id="DMh-Y8-xUL"/>
                                                     <outlet property="friendImage" destination="NjE-dQ-c3g" id="rbK-TY-8FW"/>
                                                     <outlet property="headline" destination="1Ug-NB-njB" id="JZb-HR-Uuw"/>
                                                 </connections>
@@ -539,13 +532,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGd-Hc-Oth" userLabel="Metadata">
                                         <rect key="frame" x="0.0" y="32" width="601" height="80"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwQ-KK-WlW">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwQ-KK-WlW">
                                                 <rect key="frame" x="0.0" y="0.0" width="392" height="80"/>
                                                 <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="17"/>
                                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name (First, Last)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKe-au-9gh">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name (First, Last)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKe-au-9gh">
                                                 <rect key="frame" x="392" y="0.0" width="129" height="80"/>
                                                 <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="17"/>
                                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

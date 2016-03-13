@@ -42,16 +42,13 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
         feed?.dataSource = self
         
         nameLabel?.text = "\((ServerOverlord.user?.firstName)!) \((ServerOverlord.user?.lastName)!)"
-        level?.text = String((ServerOverlord.user?.level)!)
+        level?.text = String("Lv. \((ServerOverlord.user?.level)!)")
         progress?.setProgress(Float((ServerOverlord.user?.exp)!) / Float(levels[String((ServerOverlord.user?.level)! + 1)]!), animated: true)
 
         ServerOverlord.getFriendFeed()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("hello")
-        print(friendFeed!)
-        print("goodbye")
         if let friendFeed = friendFeed {
             return friendFeed.count
         }
@@ -67,17 +64,63 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
         for friend in (ServerOverlord.user?.friends)! {
             if friend["id"].stringValue == cellFriend["userid"].stringValue {
                 cell.friendImage?.image = UIImage(data: NSData(contentsOfURL: NSURL(string: NSString(string: friend["picture"]["data"]["url"].stringValue).stringByReplacingOccurrencesOfString("\\", withString: ""))!)!)
-                cell.headline?.text = "\(friend["first_name"].stringValue) \(friend["last_name"].stringValue) completed a V\(cellFriend["rating"].stringValue) for \(cellFriend["exp"].intValue) exp"
+                
+                // Colored text in feed
+                let htmlString = "<font face=\"WalkwayBold\" color=\"#009fee\">\(friend["first_name"].stringValue) \(friend["last_name"].stringValue) completed a V\(cellFriend["rating"].stringValue) for \(cellFriend["exp"].intValue) exp! </font><font face=\"Arial\" color=\"gray\">\(getTimeAgo(cellFriend["climbdate"].stringValue))</font>"
+                print(cellFriend)
+
+                let encodedData = htmlString.dataUsingEncoding(NSUTF8StringEncoding)!
+                let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+                do {
+                    let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+                    cell.headline?.attributedText = attributedString
+                    
+                } catch _ {
+                    print("Cannot create attributed string in user feed.")
+                }
             }
         }
-
-        // Set the cell labels and user picture
-//        cell.headline!.text = friendFeed![indexPath.row]
-        cell.eventTime?.text = "5m ago"
-
-        print("Returning a cell")
-        
         return cell
+    }
+    
+    // Calculate how long ago a climb occurred
+    func getTimeAgo(occurred: NSString) -> NSString {
+        let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)
+        let currentDate = NSDate()
+        let components = NSDateComponents()
+        var timeAgo = ""
+        components.year = Int(occurred.substringWithRange(NSRange(location: 0, length: 4)))!
+        components.month = Int(occurred.substringWithRange(NSRange(location: 5, length: 2)))!
+        components.day = Int(occurred.substringWithRange(NSRange(location: 8, length: 2)))!
+        components.hour = Int(occurred.substringWithRange(NSRange(location: 11, length: 2)))!
+        components.minute = Int(occurred.substringWithRange(NSRange(location: 14, length: 2)))!
+        let date = calendar?.dateFromComponents(components)
+
+        let betweenComponents = componentsBetweenDates(date!, endDate: currentDate)
+        if betweenComponents.year > 0 {
+            timeAgo += "\(String(betweenComponents.year))y"
+        }
+        if betweenComponents.month > 0 {
+            timeAgo += "\(String(betweenComponents.month))mo"
+        }
+        if betweenComponents.day > 0 {
+            timeAgo += "\(String(betweenComponents.day))d"
+        }
+        if betweenComponents.hour > 0 {
+            timeAgo += "\(String(betweenComponents.hour))h"
+        }
+        if betweenComponents.minute > 0 {
+            timeAgo += "\(String(betweenComponents.minute))m"
+        }
+        return "\(timeAgo) ago"
+    }
+    
+    func componentsBetweenDates(startDate: NSDate, endDate: NSDate) -> NSDateComponents {
+        let calendar = NSCalendar.currentCalendar()
+        
+        let components = calendar.components([.Year, .Month, .Day, .Hour, .Minute, .Second], fromDate: startDate, toDate: endDate, options: [])
+        
+        return components
     }
 
     func serverDidRespond(sender: String, data: JSON) {
