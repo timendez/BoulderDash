@@ -17,6 +17,11 @@
             <string>WalkwayBold</string>
             <string>WalkwayBold</string>
             <string>WalkwayBold</string>
+            <string>WalkwayBold</string>
+            <string>WalkwayBold</string>
+            <string>WalkwayBold</string>
+            <string>WalkwayBold</string>
+            <string>WalkwayBold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -38,32 +43,91 @@
                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wXs-5l-OKE">
-                                <rect key="frame" x="110" y="200" width="381" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" spellCheckingType="no"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Climb Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MCQ-n2-aeN">
                                 <rect key="frame" x="110" y="151" width="381" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wXs-5l-OKE">
+                                <rect key="frame" x="110" y="200" width="381" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Flashed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCB-rl-BpZ">
+                                <rect key="frame" x="323" y="262" width="83" height="30"/>
+                                <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="25"/>
+                                <color key="textColor" red="0.41960784309999999" green="0.71372549019999998" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Campused" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xem-yY-VTP">
+                                <rect key="frame" x="323" y="300" width="121" height="30"/>
+                                <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="25"/>
+                                <color key="textColor" red="0.41960784309999999" green="0.71372549019999998" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Toe-Touched" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrD-5W-oBL">
+                                <rect key="frame" x="323" y="338" width="144" height="30"/>
+                                <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="25"/>
+                                <color key="textColor" red="0.41960784309999999" green="0.71372549019999998" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Downclimbed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ea6-oM-Xjb">
+                                <rect key="frame" x="323" y="376" width="149" height="30"/>
+                                <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="25"/>
+                                <color key="textColor" red="0.41960784309999999" green="0.71372549019999998" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Outdoor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNa-xV-mvb">
+                                <rect key="frame" x="323" y="414" width="93" height="30"/>
+                                <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="25"/>
+                                <color key="textColor" red="0.41960784309999999" green="0.71372549019999998" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="04L-f6-ltT">
+                                <rect key="frame" x="489" y="262" width="51" height="31"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <color key="onTintColor" red="0.92156862750000001" green="0.52549019610000003" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QJK-8A-Dn2">
+                                <rect key="frame" x="489" y="299" width="51" height="31"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <color key="onTintColor" red="0.92156862750000001" green="0.52549019610000003" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="0cK-d1-cJ1">
+                                <rect key="frame" x="489" y="338" width="51" height="31"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <color key="onTintColor" red="0.92156862750000001" green="0.52549019610000003" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Avk-yT-Fhm">
+                                <rect key="frame" x="489" y="376" width="51" height="31"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <color key="onTintColor" red="0.92156862750000001" green="0.52549019610000003" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="h6i-bg-zRS">
+                                <rect key="frame" x="489" y="415" width="51" height="31"/>
+                                <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
+                                <color key="onTintColor" red="0.92156862750000001" green="0.52549019610000003" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </switch>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="72M-CJ-KHw">
+                                <rect key="frame" x="110" y="262" width="174" height="216"/>
+                                <color key="backgroundColor" red="0.41960784309999999" green="0.71372549019999998" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.92156862750000001" green="0.52549019610000003" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xHd-MR-WuG" firstAttribute="centerX" secondItem="b8z-vx-5Jh" secondAttribute="centerX" id="2z3-bx-8NE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MCQ-n2-aeN" secondAttribute="trailing" constant="50" id="8Bu-dk-bfb"/>
-                            <constraint firstItem="wXs-5l-OKE" firstAttribute="centerX" secondItem="b8z-vx-5Jh" secondAttribute="centerX" id="AZn-bg-gTv"/>
                             <constraint firstItem="MCQ-n2-aeN" firstAttribute="leading" secondItem="b8z-vx-5Jh" secondAttribute="leadingMargin" constant="50" id="B0F-br-9ja"/>
                             <constraint firstItem="MCQ-n2-aeN" firstAttribute="top" secondItem="xHd-MR-WuG" secondAttribute="bottom" constant="35" id="HG0-Fg-mo5"/>
                             <constraint firstItem="wXs-5l-OKE" firstAttribute="top" secondItem="MCQ-n2-aeN" secondAttribute="bottom" constant="19" id="OyT-4S-WQ9"/>
                             <constraint firstItem="wXs-5l-OKE" firstAttribute="leading" secondItem="b8z-vx-5Jh" secondAttribute="leadingMargin" constant="50" id="XGQ-Fc-dkR"/>
                             <constraint firstItem="xHd-MR-WuG" firstAttribute="top" secondItem="U8l-rg-VHA" secondAttribute="bottom" id="YWQ-sP-55B"/>
-                            <constraint firstItem="MCQ-n2-aeN" firstAttribute="centerX" secondItem="b8z-vx-5Jh" secondAttribute="centerX" id="hP1-Va-FXm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wXs-5l-OKE" secondAttribute="trailing" constant="50" id="hgN-EW-3QP"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="picker" destination="72M-CJ-KHw" id="WLw-w1-iRj"/>
                         <segue destination="wZh-Yp-VGi" kind="unwind" identifier="backFromNewClimb" unwindAction="unwindFromNewClimb:" id="KQa-u3-Hql"/>
                     </connections>
                 </viewController>
@@ -170,7 +234,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nS0-H1-MeF" userLabel="Metadata">
                                         <rect key="frame" x="0.0" y="12" width="560" height="80"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wm-3I-sfU">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wm-3I-sfU">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="zhF-Hl-Iht"/>
@@ -179,7 +243,7 @@
                                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name (First, Last)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-zW-WSW" customClass="SegueLabel" customModule="BoulderDash" customModuleProvider="target">
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name (First, Last)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-zW-WSW" customClass="SegueLabel" customModule="BoulderDash" customModuleProvider="target">
                                                 <rect key="frame" x="100" y="0.0" width="380" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="5q9-Tm-7TV"/>
