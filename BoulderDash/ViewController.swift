@@ -11,7 +11,7 @@ import Foundation
 import FBSDKCoreKit
 import FBSDKLoginKit
 
-class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
+class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, ServerResponseDelegate {
     let loginButton = FBSDKLoginButton()
 
     // Global State
@@ -19,6 +19,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        ServerOverlord.delegate = self
 
         title = "BoulderDash"
 
@@ -72,10 +73,13 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 }
             })
         }
+    }
+    
+    
+    // Added to stop segfault, making sure every server request is atomic
+    func serverDidRespond(sender: String, data: JSON) {
         NSOperationQueue.mainQueue().addOperationWithBlock {
-            NSOperationQueue.mainQueue().addOperationWithBlock {
-                self.performSegueWithIdentifier("segueToLoad", sender: self)
-            }
+            self.performSegueWithIdentifier("segueToLoad", sender: self)
         }
     }
     
