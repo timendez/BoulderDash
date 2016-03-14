@@ -32,25 +32,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="YtY-0P-mz9" userLabel="Parent Stack">
-                                <rect key="frame" x="20" y="21" width="166" height="32"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="BoulderDash" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zUT-1t-tEJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="166" height="32"/>
-                                        <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="30"/>
-                                        <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="zUT-1t-tEJ" firstAttribute="top" secondItem="YtY-0P-mz9" secondAttribute="topMargin" id="7Lf-dj-pR6"/>
-                                    <constraint firstItem="zUT-1t-tEJ" firstAttribute="leading" secondItem="YtY-0P-mz9" secondAttribute="leading" id="bRW-Qc-oO2"/>
-                                    <constraint firstAttribute="trailing" secondItem="zUT-1t-tEJ" secondAttribute="trailing" id="iOk-AP-OVl"/>
-                                    <constraint firstItem="zUT-1t-tEJ" firstAttribute="top" secondItem="YtY-0P-mz9" secondAttribute="top" id="skt-Pt-ggR"/>
-                                </constraints>
-                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="BoulderDash" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHd-MR-WuG">
+                                <rect key="frame" x="217" y="84" width="166" height="32"/>
+                                <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="xHd-MR-WuG" firstAttribute="centerX" secondItem="b8z-vx-5Jh" secondAttribute="centerX" id="2z3-bx-8NE"/>
+                            <constraint firstItem="xHd-MR-WuG" firstAttribute="top" secondItem="U8l-rg-VHA" secondAttribute="bottom" id="YWQ-sP-55B"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="wZh-Yp-VGi" kind="unwind" identifier="backFromNewClimb" unwindAction="unwindFromNewClimb:" id="KQa-u3-Hql"/>
@@ -160,7 +153,7 @@
                                         <rect key="frame" x="0.0" y="12" width="560" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wm-3I-sfU">
-                                                <rect key="frame" x="0.0" y="0.0" width="351" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="zhF-Hl-Iht"/>
                                                 </constraints>
@@ -169,7 +162,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name (First, Last)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-zW-WSW" customClass="SegueLabel" customModule="BoulderDash" customModuleProvider="target">
-                                                <rect key="frame" x="351" y="0.0" width="129" height="80"/>
+                                                <rect key="frame" x="100" y="0.0" width="380" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="5q9-Tm-7TV"/>
                                                 </constraints>
