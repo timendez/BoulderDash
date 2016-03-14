@@ -95,6 +95,9 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="116" id="ozf-fI-nhT"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Nnk-b5-1uc">
                                         <rect key="frame" x="465" y="0.0" width="49" height="155"/>
@@ -129,31 +132,58 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="vrD-5W-oBL" firstAttribute="centerY" secondItem="0cK-d1-cJ1" secondAttribute="centerY" id="8P7-8W-kBh"/>
+                                    <constraint firstItem="ZhP-kg-YgI" firstAttribute="leading" secondItem="72M-CJ-KHw" secondAttribute="trailing" id="8Px-Bc-jS4"/>
                                     <constraint firstItem="Ea6-oM-Xjb" firstAttribute="centerY" secondItem="Avk-yT-Fhm" secondAttribute="centerY" id="C2C-Or-pvo"/>
                                     <constraint firstItem="GNa-xV-mvb" firstAttribute="centerY" secondItem="h6i-bg-zRS" secondAttribute="centerY" id="fGn-FQ-L8o"/>
                                     <constraint firstItem="wCB-rl-BpZ" firstAttribute="centerY" secondItem="04L-f6-ltT" secondAttribute="centerY" id="fQo-NZ-9ma"/>
                                     <constraint firstItem="Xem-yY-VTP" firstAttribute="centerY" secondItem="QJK-8A-Dn2" secondAttribute="centerY" id="rkJ-0m-WP2"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fmn-om-dR8">
+                                <rect key="frame" x="20" y="540" width="560" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="WYx-aQ-9dM"/>
+                                    <constraint firstAttribute="height" constant="40" id="wVK-2H-aLk"/>
+                                </constraints>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="newClimb" destination="WCq-xV-0VP" eventType="touchUpInside" id="y5F-ss-hHz"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xHd-MR-WuG" firstAttribute="centerX" secondItem="b8z-vx-5Jh" secondAttribute="centerX" id="2z3-bx-8NE"/>
                             <constraint firstItem="4dT-FX-1GX" firstAttribute="top" secondItem="gdw-IQ-bPE" secondAttribute="bottom" constant="183" id="5Ag-Bj-V3c"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MCQ-n2-aeN" secondAttribute="trailing" constant="50" id="8Bu-dk-bfb"/>
+                            <constraint firstItem="Fmn-om-dR8" firstAttribute="trailing" secondItem="b8z-vx-5Jh" secondAttribute="trailingMargin" id="8Df-hA-pas"/>
                             <constraint firstItem="MCQ-n2-aeN" firstAttribute="leading" secondItem="b8z-vx-5Jh" secondAttribute="leadingMargin" constant="50" id="B0F-br-9ja"/>
                             <constraint firstItem="MCQ-n2-aeN" firstAttribute="top" secondItem="xHd-MR-WuG" secondAttribute="bottom" constant="35" id="HG0-Fg-mo5"/>
+                            <constraint firstItem="4dT-FX-1GX" firstAttribute="top" secondItem="Fmn-om-dR8" secondAttribute="bottom" constant="20" id="Odj-Ci-XeA"/>
                             <constraint firstItem="wXs-5l-OKE" firstAttribute="top" secondItem="MCQ-n2-aeN" secondAttribute="bottom" constant="19" id="OyT-4S-WQ9"/>
                             <constraint firstItem="gdw-IQ-bPE" firstAttribute="top" secondItem="wXs-5l-OKE" secondAttribute="bottom" constant="32" id="SiS-rW-KQa"/>
+                            <constraint firstItem="Fmn-om-dR8" firstAttribute="centerX" secondItem="b8z-vx-5Jh" secondAttribute="centerX" id="Vde-Ij-tf6"/>
                             <constraint firstItem="wXs-5l-OKE" firstAttribute="leading" secondItem="b8z-vx-5Jh" secondAttribute="leadingMargin" constant="50" id="XGQ-Fc-dkR"/>
                             <constraint firstItem="xHd-MR-WuG" firstAttribute="top" secondItem="U8l-rg-VHA" secondAttribute="bottom" id="YWQ-sP-55B"/>
+                            <constraint firstItem="Fmn-om-dR8" firstAttribute="leading" secondItem="b8z-vx-5Jh" secondAttribute="leadingMargin" id="Yha-on-Y7F"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wXs-5l-OKE" secondAttribute="trailing" constant="50" id="hgN-EW-3QP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gdw-IQ-bPE" secondAttribute="trailing" constant="23" id="iib-Ht-k55"/>
                             <constraint firstItem="gdw-IQ-bPE" firstAttribute="leading" secondItem="b8z-vx-5Jh" secondAttribute="leadingMargin" constant="23" id="laL-ig-y93"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="campus" destination="QJK-8A-Dn2" id="YJj-st-3af"/>
+                        <outlet property="climbName" destination="MCQ-n2-aeN" id="Lk4-eB-9gs"/>
+                        <outlet property="downclimb" destination="Avk-yT-Fhm" id="moz-rA-9qj"/>
+                        <outlet property="flashed" destination="04L-f6-ltT" id="snI-z6-lV4"/>
+                        <outlet property="location" destination="wXs-5l-OKE" id="0my-7O-794"/>
+                        <outlet property="outdoor" destination="h6i-bg-zRS" id="VaM-ik-dkz"/>
                         <outlet property="picker" destination="72M-CJ-KHw" id="WLw-w1-iRj"/>
+                        <outlet property="toetouch" destination="0cK-d1-cJ1" id="Cnx-xG-4iD"/>
                         <segue destination="wZh-Yp-VGi" kind="unwind" identifier="backFromNewClimb" unwindAction="unwindFromNewClimb:" id="KQa-u3-Hql"/>
                     </connections>
                 </viewController>
@@ -260,8 +290,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nS0-H1-MeF" userLabel="Metadata">
                                         <rect key="frame" x="0.0" y="12" width="560" height="80"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wm-3I-sfU">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wm-3I-sfU">
+                                                <rect key="frame" x="0.0" y="0.0" width="351" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="zhF-Hl-Iht"/>
                                                 </constraints>
@@ -269,8 +299,8 @@
                                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name (First, Last)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-zW-WSW" customClass="SegueLabel" customModule="BoulderDash" customModuleProvider="target">
-                                                <rect key="frame" x="100" y="0.0" width="380" height="80"/>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name (First, Last)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-zW-WSW" customClass="SegueLabel" customModule="BoulderDash" customModuleProvider="target">
+                                                <rect key="frame" x="351" y="0.0" width="129" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="5q9-Tm-7TV"/>
                                                 </constraints>
