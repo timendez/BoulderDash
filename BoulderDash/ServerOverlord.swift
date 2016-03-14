@@ -86,8 +86,8 @@ class ServerOverlord {
                 if json == [] {
                     addUser()
                 }
-                user!.level = json["level"] ? json["level"].intValue : 1
-                user!.exp = json["exp"] ? json["exp"].intValue : 0
+                user!.level = json[0]["level"] ? json[0]["level"].intValue : 1
+                user!.exp = json[0]["exp"] ? json[0]["exp"].intValue : 0
                 print("About to call serverDidRespond")
                 delegate?.serverDidRespond("getUser", data: nil)
             }

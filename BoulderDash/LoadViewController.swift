@@ -25,7 +25,6 @@ class LoadViewController: UIViewController, ServerResponseDelegate {
         super.viewDidLoad()
         getFBFriends()
         ServerOverlord.delegate = self
-        print(NSDate().description)
     }
     
     func getFBFriends() {
