@@ -38,11 +38,29 @@
                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wXs-5l-OKE">
+                                <rect key="frame" x="110" y="200" width="381" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Climb Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MCQ-n2-aeN">
+                                <rect key="frame" x="110" y="151" width="381" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xHd-MR-WuG" firstAttribute="centerX" secondItem="b8z-vx-5Jh" secondAttribute="centerX" id="2z3-bx-8NE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MCQ-n2-aeN" secondAttribute="trailing" constant="50" id="8Bu-dk-bfb"/>
+                            <constraint firstItem="wXs-5l-OKE" firstAttribute="centerX" secondItem="b8z-vx-5Jh" secondAttribute="centerX" id="AZn-bg-gTv"/>
+                            <constraint firstItem="MCQ-n2-aeN" firstAttribute="leading" secondItem="b8z-vx-5Jh" secondAttribute="leadingMargin" constant="50" id="B0F-br-9ja"/>
+                            <constraint firstItem="MCQ-n2-aeN" firstAttribute="top" secondItem="xHd-MR-WuG" secondAttribute="bottom" constant="35" id="HG0-Fg-mo5"/>
+                            <constraint firstItem="wXs-5l-OKE" firstAttribute="top" secondItem="MCQ-n2-aeN" secondAttribute="bottom" constant="19" id="OyT-4S-WQ9"/>
+                            <constraint firstItem="wXs-5l-OKE" firstAttribute="leading" secondItem="b8z-vx-5Jh" secondAttribute="leadingMargin" constant="50" id="XGQ-Fc-dkR"/>
                             <constraint firstItem="xHd-MR-WuG" firstAttribute="top" secondItem="U8l-rg-VHA" secondAttribute="bottom" id="YWQ-sP-55B"/>
+                            <constraint firstItem="MCQ-n2-aeN" firstAttribute="centerX" secondItem="b8z-vx-5Jh" secondAttribute="centerX" id="hP1-Va-FXm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wXs-5l-OKE" secondAttribute="trailing" constant="50" id="hgN-EW-3QP"/>
                         </constraints>
                     </view>
                     <connections>
@@ -52,7 +70,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Nx-9O-pyc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="wZh-Yp-VGi" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="988" y="1290"/>
+            <point key="canvasLocation" x="945" y="1303"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="lAq-0A-64c">
