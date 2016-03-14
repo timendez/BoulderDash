@@ -45,22 +45,18 @@ class LoadViewController: UIViewController, ServerResponseDelegate {
     *
     * Fulfills ServerResponseDelegate.
     */
-    var serverRespondedOnce = false
     func serverDidRespond(sender: String, data: JSON) {
-        print("In serverDidRespond in Load View Controller")
         friendFeed = data.arrayValue
         NSOperationQueue.mainQueue().addOperationWithBlock {
-            if(self.serverRespondedOnce) {
+            if(sender == "getFeed") {
                 self.performSegueWithIdentifier("segueToFeed", sender: self)
             }
-            self.serverRespondedOnce = true
         }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let fvcontroller = segue.destinationViewController as? FeedViewController {
             fvcontroller.friendFeed = self.friendFeed
-            print("In prepare for Segue in Load")
         }
     }
 }

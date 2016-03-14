@@ -121,7 +121,6 @@ class ServerOverlord {
             if let data = data {
                 let json = JSON(data: data)
                 print("Got friend feed from our DB")
-                print(json)
                 delegate?.serverDidRespond("getFeed", data: json)
             }
             else {
