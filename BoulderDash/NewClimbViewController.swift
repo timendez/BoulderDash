@@ -52,7 +52,7 @@ class NewClimbViewController: UIViewController, UIPickerViewDataSource, UIPicker
     }
     
     @IBAction func newClimb() {
-        ServerOverlord.addClimb((climbName?.text)!, loc: (location?.text)!, rating: (picker?.selectedRowInComponent(0))!, flash: (flashed?.selected)!, down: (downclimb?.selected)!, campus: (campus?.selected)!, toe: (toetouch?.selected)!, outdoor: (outdoor?.selected)!)
+        ServerOverlord.addClimb((climbName?.text)!, loc: (location?.text)!, rating: (picker?.selectedRowInComponent(0))!, flash: (flashed?.on)!, down: (downclimb?.on)!, campus: (campus?.on)!, toe: (toetouch?.on)!, outdoor: (outdoor?.on)!)
     }
 }
 
