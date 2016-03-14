@@ -44,6 +44,13 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
         nameLabel?.text = "\((ServerOverlord.user?.firstName)!) \((ServerOverlord.user?.lastName)!)"
         level?.text = String("Lv. \((ServerOverlord.user?.level)!)")
         progress?.setProgress(Float((ServerOverlord.user?.exp)!) / Float(levels[String((ServerOverlord.user?.level)! + 1)]!), animated: true)
+        userImage?.image = ServerOverlord.user?.image
+        userImage?.layer.borderWidth = 0
+        userImage?.layer.borderColor = CustomColor.colorByHexString("#FF9500")
+        userImage?.layer.masksToBounds = false
+        userImage?.layer.borderColor = UIColor.blackColor().CGColor
+        userImage?.layer.cornerRadius = (userImage?.frame.height)!/2
+        userImage?.clipsToBounds = true
 
         ServerOverlord.getFriendFeed()
     }
@@ -80,6 +87,7 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
                 }
             }
         }
+        print("adding cell")
         return cell
     }
     

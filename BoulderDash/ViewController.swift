@@ -65,9 +65,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     */
     func beginLoadProcess() {
         if(FBSDKAccessToken.currentAccessToken() != nil) {
-            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(small)"]).startWithCompletionHandler({ (connection, result, error) -> Void in
+            FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "id, name, first_name, last_name, picture.type(normal)"]).startWithCompletionHandler({ (connection, result, error) -> Void in
                 if (error == nil) {
-                    ServerOverlord.user = User(firstName: result["first_name"] as! String!, lastName: result["last_name"] as! String!, id: result["id"] as! String!)
+                    ServerOverlord.user = User(firstName: result["first_name"] as! String!, lastName: result["last_name"] as! String!, id: result["id"] as! String!, image: UIImage(data: NSData(contentsOfURL: NSURL(string: NSString(string: result["picture"]!!["data"]!!["url"] as! String!) as String)!)!)!)
                     ServerOverlord.getUser()
                 }
             })

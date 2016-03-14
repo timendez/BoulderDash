@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class User {
     var firstName: String
@@ -14,15 +15,17 @@ class User {
     var id: String
     var level: Int
     var exp: Int
+    var image: UIImage
     
     var friends: [JSON]?
     
-    init(firstName: String, lastName: String, id: String) {
+    init(firstName: String, lastName: String, id: String, image: UIImage) {
         self.firstName = firstName
         self.lastName = lastName
         self.id = id
         self.level = -1
         self.exp = -1
+        self.image = image
         
         self.friends = []
     }
