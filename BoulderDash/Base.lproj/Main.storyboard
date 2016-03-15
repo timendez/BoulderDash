@@ -298,8 +298,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nS0-H1-MeF" userLabel="Metadata">
                                         <rect key="frame" x="0.0" y="12" width="560" height="80"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wm-3I-sfU">
-                                                <rect key="frame" x="0.0" y="0.0" width="346" height="80"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wm-3I-sfU">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="zhF-Hl-Iht"/>
                                                 </constraints>
@@ -307,8 +307,8 @@
                                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name (First, Last)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-zW-WSW" customClass="SegueLabel" customModule="BoulderDash" customModuleProvider="target">
-                                                <rect key="frame" x="346" y="0.0" width="134" height="80"/>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name (First, Last)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-zW-WSW" customClass="SegueLabel" customModule="BoulderDash" customModuleProvider="target">
+                                                <rect key="frame" x="100" y="0.0" width="380" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="5q9-Tm-7TV"/>
                                                 </constraints>
@@ -431,16 +431,18 @@
                         <outlet property="progress" destination="dg8-OI-NAD" id="xCx-No-Nsz"/>
                         <outlet property="userImage" destination="Qkp-GO-NRi" id="2k9-r4-wzX"/>
                         <segue destination="Mok-y0-w9D" kind="show" identifier="segueToHistory" id="jXh-8e-Zxc"/>
+                        <segue destination="Uon-gL-bWk" kind="unwind" identifier="unwindFromFeed" unwindAction="unwindFromFeed:" id="AgZ-Bq-yvj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="05G-71-6qy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Uon-gL-bWk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="237" y="1174"/>
         </scene>
         <!--Climb History-->
         <scene sceneID="zBg-o5-6WI">
             <objects>
-                <viewController id="Mok-y0-w9D" userLabel="Climb History" customClass="FeedViewController" customModule="BoulderDash" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Mok-y0-w9D" userLabel="Climb History" customClass="HistoryViewController" customModule="BoulderDash" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0lZ-2h-HpC"/>
                         <viewControllerLayoutGuide type="bottom" id="rJx-PE-b7f"/>
