@@ -178,8 +178,8 @@
                                     <action selector="newClimb" destination="WCq-xV-0VP" eventType="touchUpInside" id="y5F-ss-hHz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5B-gs-1zY">
-                                <rect key="frame" x="20" y="84" width="34" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5B-gs-1zY">
+                                <rect key="frame" x="20" y="81" width="34" height="17"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
                                     <segue destination="wZh-Yp-VGi" kind="unwind" unwindAction="unwindFromNewClimb:" id="jmR-E2-0Wi"/>
@@ -194,6 +194,8 @@
                             <constraint firstItem="Fmn-om-dR8" firstAttribute="trailing" secondItem="b8z-vx-5Jh" secondAttribute="trailingMargin" id="8Df-hA-pas"/>
                             <constraint firstItem="MCQ-n2-aeN" firstAttribute="leading" secondItem="b8z-vx-5Jh" secondAttribute="leadingMargin" constant="50" id="B0F-br-9ja"/>
                             <constraint firstItem="MCQ-n2-aeN" firstAttribute="top" secondItem="xHd-MR-WuG" secondAttribute="bottom" constant="35" id="HG0-Fg-mo5"/>
+                            <constraint firstItem="s5B-gs-1zY" firstAttribute="centerY" secondItem="xHd-MR-WuG" secondAttribute="centerY" id="I14-G2-jFG"/>
+                            <constraint firstItem="s5B-gs-1zY" firstAttribute="leading" secondItem="b8z-vx-5Jh" secondAttribute="leadingMargin" id="Kmt-JP-ers"/>
                             <constraint firstItem="4dT-FX-1GX" firstAttribute="top" secondItem="Fmn-om-dR8" secondAttribute="bottom" constant="20" id="Odj-Ci-XeA"/>
                             <constraint firstItem="wXs-5l-OKE" firstAttribute="top" secondItem="MCQ-n2-aeN" secondAttribute="bottom" constant="19" id="OyT-4S-WQ9"/>
                             <constraint firstItem="s5B-gs-1zY" firstAttribute="centerY" secondItem="xHd-MR-WuG" secondAttribute="centerY" id="S5y-QT-wou"/>
@@ -204,7 +206,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="wXs-5l-OKE" secondAttribute="trailing" constant="50" id="hgN-EW-3QP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gdw-IQ-bPE" secondAttribute="trailing" constant="23" id="iib-Ht-k55"/>
                             <constraint firstItem="gdw-IQ-bPE" firstAttribute="leading" secondItem="b8z-vx-5Jh" secondAttribute="leadingMargin" constant="23" id="laL-ig-y93"/>
+                            <constraint firstItem="s5B-gs-1zY" firstAttribute="top" secondItem="U8l-rg-VHA" secondAttribute="bottom" constant="17" id="tdH-Bd-Nwb"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="S5y-QT-wou"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="campus" destination="QJK-8A-Dn2" id="YJj-st-3af"/>
