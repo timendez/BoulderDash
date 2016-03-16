@@ -8,13 +8,16 @@
 
 import Foundation
 import UIKit
+import FBSDKCoreKit
+import FBSDKLoginKit
 
 protocol ViewTouchedDelegate{
     func viewWasTouched()
 }
 
-class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDelegate, UITableViewDataSource, ServerResponseDelegate {
-    
+class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDelegate, UITableViewDataSource, ServerResponseDelegate, FBSDKLoginButtonDelegate {
+    let loginButton = FBSDKLoginButton()
+
     let levels = ["1": 0, "2": 200, "3": 400, "4": 800, "5": 1600, "6": 3200, "7": 6400, "8": 12800, "9": 25600, "10": 51200, "11": 102400, "12": 204800, "13": 409600, "14": 811200, "15": 1160000, "16": 5120000, "17": 10000000, "18": 15000000, "19": 19000000, "20": 25500000, "21": 35500000]
     
     @IBOutlet var level: UILabel?
@@ -53,8 +56,15 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
         userImage?.layer.borderColor = UIColor.blackColor().CGColor
         userImage?.layer.cornerRadius = (userImage?.frame.height)!/2
         userImage?.clipsToBounds = true
+        userImage?.userInteractionEnabled = true
 
         ServerOverlord.getFriendFeed()
+        
+        let fbLoginButton: FBSDKLoginButton! = FBSDKLoginButton()
+        self.view.addSubview(fbLoginButton)
+        fbLoginButton.delegate = self
+        //fbLoginButton.bounds = CGRectMake(self.view.center.x, self.view.center.y, 200, 40)
+        fbLoginButton.center = CGPointMake(self.view.center.x / CGFloat(1.53), self.view.center.y / CGFloat(2.45))
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -146,14 +156,37 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
     }
     
     @IBAction func unwindFromNewClimb(segue: UIStoryboardSegue) {
-        level?.text = String((ServerOverlord.user?.level)!)
+        level?.text = String("Lv. \((ServerOverlord.user?.level)!)")
         progress?.setProgress(Float((ServerOverlord.user?.exp)!) / Float(levels[String((ServerOverlord.user?.level)! + 1)]!), animated: true)
         ServerOverlord.delegate = self
+    }
+    
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        print("User Just Logged In")
+        
+        if (error != nil) {
+            // Process error
+        }
+        else if result.isCancelled {
+            // Handle cancellations
+        }
+        else {
+        }
+    }
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        NSOperationQueue.mainQueue().addOperationWithBlock {
+            self.performSegueWithIdentifier("unwindFromFeed", sender: self)
+        }
     }
 }
 
 class SegueImage: UIImageView {
     var delegate: ViewTouchedDelegate?
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        delegate?.viewWasTouched()
+    }
 }
 
 class SegueLabel: UILabel {

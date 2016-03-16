@@ -14,9 +14,6 @@ import FBSDKLoginKit
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, ServerResponseDelegate {
     let loginButton = FBSDKLoginButton()
 
-    // Global State
-    var isLoggedIn = false;
-
     override func viewDidLoad() {
         super.viewDidLoad()
         ServerOverlord.delegate = self
@@ -36,6 +33,16 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, ServerRes
             fbLoginButton.center = self.view.center
             fbLoginButton.readPermissions = ["user_friends"]
         }
+    }
+    
+    @IBAction func unwindFromFeed(segue: UIStoryboardSegue) {
+        print("Unwound from feed")
+        ServerOverlord.delegate = self
+        let fbLoginButton: FBSDKLoginButton! = FBSDKLoginButton()
+        self.view.addSubview(fbLoginButton)
+        fbLoginButton.delegate = self
+        fbLoginButton.center = self.view.center
+        fbLoginButton.readPermissions = ["user_friends"]
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,6 +78,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, ServerRes
                     ServerOverlord.user = User(firstName: result["first_name"] as! String!, lastName: result["last_name"] as! String!, id: result["id"] as! String!, image: UIImage(data: NSData(contentsOfURL: NSURL(string: NSString(string: result["picture"]!!["data"]!!["url"] as! String!) as String)!)!)!)
                     ServerOverlord.getUser()
                 }
+                else {
+                    print(error)
+                }
             })
         }
     }
@@ -78,6 +88,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, ServerRes
     
     // Added to stop segfault, making sure every server request is atomic
     func serverDidRespond(sender: String, data: JSON) {
+        print("rlly tho")
         NSOperationQueue.mainQueue().addOperationWithBlock {
             self.performSegueWithIdentifier("segueToLoad", sender: self)
         }
