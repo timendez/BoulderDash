@@ -79,7 +79,7 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("FeedCell", forIndexPath: indexPath) as! FeedTableViewCell
         let cellFriend = friendFeed![indexPath.row]
-        
+
         for friend in (ServerOverlord.user?.friends)! {
             if friend["id"].stringValue == cellFriend["userid"].stringValue {
                 cell.friendImage?.image = UIImage(data: NSData(contentsOfURL: NSURL(string: NSString(string: friend["picture"]["data"]["url"].stringValue).stringByReplacingOccurrencesOfString("\\", withString: ""))!)!)

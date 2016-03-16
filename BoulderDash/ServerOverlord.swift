@@ -98,6 +98,25 @@ class ServerOverlord {
         download.resume()
     }
     
+    // Get the climbs of the user for the climb history
+    static func getClimbs() {
+        print("Sending http://boulderdash.herokuapp.com/climbs?userId=\(user!.id)")
+        let url = NSURL(string: "http://boulderdash.herokuapp.com/climbs?userId=\(user!.id)")
+        let session = NSURLSession.sharedSession()
+        let download = session.dataTaskWithURL(url!) {
+            (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+            if let data = data {
+                let json = JSON(data: data)
+                print("About to call serverDidRespond")
+                delegate?.serverDidRespond("getClimbs", data: json)
+            }
+            else {
+                print("ERROR: Could not fetch data in getClimbs")
+            }
+        }
+        download.resume()
+    }
+    
    /*
     * Gets the user's friends' most recently completed climbs (the user's friend feed)
     *

@@ -8,17 +8,29 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController {
+class HistoryViewController: UIViewController, ServerResponseDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        ServerOverlord.delegate = self
+        ServerOverlord.getClimbs()
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func serverDidRespond(sender: String, data: JSON) {
+        print("HERE")
+        for (_, climb) in data {
+            addClimbToView(climb)
+        }
+    }
+    
+    func addClimbToView(climb: JSON) {
+        
     }
     
 
