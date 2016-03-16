@@ -41,18 +41,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BoulderDash" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xHd-MR-WuG">
-                                <rect key="frame" x="217" y="64" width="166" height="32"/>
+                                <rect key="frame" x="217" y="64" width="166" height="52"/>
                                 <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="30"/>
                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Climb Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MCQ-n2-aeN">
-                                <rect key="frame" x="110" y="151" width="381" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Climb Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MCQ-n2-aeN">
+                                <rect key="frame" x="70" y="151" width="460" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="x0v-ts-a67"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wXs-5l-OKE">
-                                <rect key="frame" x="110" y="200" width="381" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wXs-5l-OKE">
+                                <rect key="frame" x="70" y="200" width="460" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="gpq-YT-ARn"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no"/>
                             </textField>
@@ -69,30 +75,45 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flashed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCB-rl-BpZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="116" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="31" id="vqk-Y0-UuY"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="20"/>
                                                 <color key="textColor" red="0.41960784309999999" green="0.71372549019999998" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Campused" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xem-yY-VTP">
                                                 <rect key="frame" x="0.0" y="31" width="116" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="31" id="JKa-cv-g36"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="20"/>
                                                 <color key="textColor" red="0.41960784309999999" green="0.71372549019999998" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toe-Touched" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vrD-5W-oBL">
                                                 <rect key="frame" x="0.0" y="62" width="116" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="31" id="VxO-dX-w0b"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="20"/>
                                                 <color key="textColor" red="0.41960784309999999" green="0.71372549019999998" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Downclimbed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ea6-oM-Xjb">
                                                 <rect key="frame" x="0.0" y="93" width="116" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="31" id="zBg-XW-u9k"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="20"/>
                                                 <color key="textColor" red="0.41960784309999999" green="0.71372549019999998" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Outdoor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNa-xV-mvb">
                                                 <rect key="frame" x="0.0" y="124" width="116" height="31"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="31" id="iyR-lP-yCG"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="20"/>
                                                 <color key="textColor" red="0.41960784309999999" green="0.71372549019999998" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
