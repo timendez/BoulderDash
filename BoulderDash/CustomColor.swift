@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+
+// From http://stackoverflow.com/questions/32297775/convert-hex-colors-to-rgb-in-swift-and-count-elements
 class CustomColor {
     static func colorByHexString(hex: String) -> CGColor {
         var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet()).uppercaseString

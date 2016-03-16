@@ -20,7 +20,12 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         HistoryTableView?.delegate = self
         HistoryTableView?.dataSource = self
         
-        progress?.setProgress(Float((ServerOverlord.user?.exp)!) / Float(levels[String((ServerOverlord.user?.level)! + 1)]!), animated: true)
+        // Set up metadata
+        let isFriend = ServerOverlord.isFriendHistory
+        let historyUser = isFriend ? ServerOverlord.historyUser! : ServerOverlord.user!
+
+        progress?.setProgress(Float(historyUser.exp) / Float(levels[String(historyUser.level + 1)]!), animated: true)
+        
     }
 
     override func didReceiveMemoryWarning() {

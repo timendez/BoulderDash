@@ -301,7 +301,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nS0-H1-MeF" userLabel="Metadata">
                                         <rect key="frame" x="0.0" y="10" width="560" height="80"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wm-3I-sfU">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wm-3I-sfU">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="zhF-Hl-Iht"/>
@@ -310,7 +310,7 @@
                                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name (First, Last)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-zW-WSW" customClass="SegueLabel" customModule="BoulderDash" customModuleProvider="target">
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name (First, Last)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-zW-WSW" customClass="SegueLabel" customModule="BoulderDash" customModuleProvider="target">
                                                 <rect key="frame" x="100" y="0.0" width="380" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="5q9-Tm-7TV"/>
