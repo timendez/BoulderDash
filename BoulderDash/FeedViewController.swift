@@ -150,15 +150,16 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
     }
 
     func serverDidRespond(sender: String, data: JSON) {
-        print("Coming back from getting friend feed")
-        // Already set by LoadViewController
-        //friendFeed = data.arrayValue
+        if(sender == "getClimbs") {
+            NSOperationQueue.mainQueue().addOperationWithBlock {
+                self.performSegueWithIdentifier("segueToHistory", sender: self)
+            }
+        }
     }
 
+    // User touched their picture or name
     func viewWasTouched() {
-        NSOperationQueue.mainQueue().addOperationWithBlock {
-            self.performSegueWithIdentifier("segueToHistory", sender: self)
-        }
+        ServerOverlord.getClimbs()
     }
     
     @IBAction func unwindFromNewClimb(segue: UIStoryboardSegue) {

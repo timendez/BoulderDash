@@ -26,6 +26,7 @@ class ServerOverlord {
     
     static var delegate: ServerResponseDelegate?
     static var user: User?
+    static var climbHistory: JSON?
     
    /*
     *
@@ -108,7 +109,8 @@ class ServerOverlord {
             if let data = data {
                 let json = JSON(data: data)
                 print("About to call serverDidRespond")
-                delegate?.serverDidRespond("getClimbs", data: json)
+                climbHistory = json
+                delegate?.serverDidRespond("getClimbs", data: nil)
             }
             else {
                 print("ERROR: Could not fetch data in getClimbs")

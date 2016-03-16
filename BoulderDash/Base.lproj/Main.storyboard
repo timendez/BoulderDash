@@ -298,8 +298,8 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nS0-H1-MeF" userLabel="Metadata">
                                         <rect key="frame" x="0.0" y="10" width="560" height="80"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wm-3I-sfU">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wm-3I-sfU">
+                                                <rect key="frame" x="0.0" y="0.0" width="230" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="zhF-Hl-Iht"/>
                                                 </constraints>
@@ -307,8 +307,8 @@
                                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name (First, Last)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-zW-WSW" customClass="SegueLabel" customModule="BoulderDash" customModuleProvider="target">
-                                                <rect key="frame" x="100" y="0.0" width="380" height="80"/>
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name (First, Last)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-zW-WSW" customClass="SegueLabel" customModule="BoulderDash" customModuleProvider="target">
+                                                <rect key="frame" x="230" y="0.0" width="250" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="5q9-Tm-7TV"/>
                                                 </constraints>
@@ -498,6 +498,67 @@
                                     <segue destination="Bmq-EK-mfi" kind="unwind" unwindAction="unwindFromNewClimb:" id="lkW-cR-oER"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5X4-wo-vH8" userLabel="History">
+                                <rect key="frame" x="0.0" y="191" width="600" height="409"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" id="g3p-wV-0oy" customClass="HistoryTableViewCell" customModule="BoulderDash" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g3p-wV-0oy" id="asq-jw-k8h">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dZ-N6-qY2">
+                                                    <rect key="frame" x="8" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJD-NO-EWm">
+                                                    <rect key="frame" x="58" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4O-Zj-7aN">
+                                                    <rect key="frame" x="108" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILI-6e-SdJ">
+                                                    <rect key="frame" x="158" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXF-cj-YOM">
+                                                    <rect key="frame" x="550" y="11" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DXF-cj-YOM" firstAttribute="trailing" secondItem="asq-jw-k8h" secondAttribute="trailingMargin" id="1JM-Ea-PYj"/>
+                                                <constraint firstItem="X4O-Zj-7aN" firstAttribute="leading" secondItem="TJD-NO-EWm" secondAttribute="trailing" constant="8" id="Dr3-6C-PKw"/>
+                                                <constraint firstItem="ILI-6e-SdJ" firstAttribute="leading" secondItem="X4O-Zj-7aN" secondAttribute="trailing" constant="8" id="MQL-Ve-ZCm"/>
+                                                <constraint firstItem="6dZ-N6-qY2" firstAttribute="leading" secondItem="asq-jw-k8h" secondAttribute="leadingMargin" id="Mm3-Tq-cKF"/>
+                                                <constraint firstItem="DXF-cj-YOM" firstAttribute="leading" secondItem="ILI-6e-SdJ" secondAttribute="trailing" constant="350" id="Rho-et-RJL"/>
+                                                <constraint firstItem="TJD-NO-EWm" firstAttribute="leading" secondItem="6dZ-N6-qY2" secondAttribute="trailing" constant="8" id="mui-ng-JEu"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ClimbDateLabel" destination="DXF-cj-YOM" id="i1f-lX-TSx"/>
+                                            <outlet property="ClimbNameLabel" destination="6dZ-N6-qY2" id="qqq-g8-6gb"/>
+                                            <outlet property="DifficultyLabel" destination="TJD-NO-EWm" id="kHi-XG-gsg"/>
+                                            <outlet property="ExpEarnedLabel" destination="ILI-6e-SdJ" id="dw3-e4-ccf"/>
+                                            <outlet property="LocationLabel" destination="X4O-Zj-7aN" id="O1F-Y6-wjx"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -511,6 +572,9 @@
                             <constraint firstItem="f7T-yJ-F6m" firstAttribute="centerX" secondItem="ePc-aq-7KT" secondAttribute="centerX" id="gI1-tr-izB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="HistoryTableView" destination="5X4-wo-vH8" id="aNY-VL-gt7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IeB-TX-DpR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Bmq-EK-mfi" userLabel="Exit" sceneMemberID="exit"/>

@@ -8,12 +8,14 @@
 
 import UIKit
 
-class HistoryViewController: UIViewController, ServerResponseDelegate {
+class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var HistoryTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        ServerOverlord.delegate = self
-        ServerOverlord.getClimbs()
+        HistoryTableView?.delegate = self
+        HistoryTableView?.dataSource = self
         // Do any additional setup after loading the view.
     }
 
@@ -22,17 +24,20 @@ class HistoryViewController: UIViewController, ServerResponseDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func serverDidRespond(sender: String, data: JSON) {
-        print("HERE")
-        for (_, climb) in data {
-            addClimbToView(climb)
-        }
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return (ServerOverlord.climbHistory?.count)!
     }
     
-    func addClimbToView(climb: JSON) {
-        
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("HistoryCell", forIndexPath: indexPath) as! HistoryTableViewCell
+
+        cell.ClimbDateLabel.text = (ServerOverlord.climbHistory)![indexPath.row]["climbdate"].stringValue
+        cell.ClimbNameLabel.text = (ServerOverlord.climbHistory)![indexPath.row]["name"].stringValue
+        cell.DifficultyLabel.text = (ServerOverlord.climbHistory)![indexPath.row]["rating"].stringValue
+        cell.LocationLabel.text = (ServerOverlord.climbHistory)![indexPath.row]["location"].stringValue
+        cell.ExpEarnedLabel.text = (ServerOverlord.climbHistory)![indexPath.row]["expEarned"].stringValue
+        return cell
     }
-    
 
     /*
     // MARK: - Navigation
@@ -44,4 +49,12 @@ class HistoryViewController: UIViewController, ServerResponseDelegate {
     }
     */
 
+}
+
+class HistoryTableViewCell: UITableViewCell {
+    @IBOutlet weak var ClimbDateLabel: UILabel!
+    @IBOutlet weak var ClimbNameLabel: UILabel!
+    @IBOutlet weak var DifficultyLabel: UILabel!
+    @IBOutlet weak var LocationLabel: UILabel!
+    @IBOutlet weak var ExpEarnedLabel: UILabel!
 }
