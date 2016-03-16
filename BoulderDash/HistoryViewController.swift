@@ -12,6 +12,9 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     @IBOutlet weak var HistoryTableView: UITableView!
     @IBOutlet weak var progress: UIProgressView!
+    @IBOutlet weak var Name: UILabel!
+    @IBOutlet weak var Level: UILabel!
+    @IBOutlet weak var ImageView: UIImageView!
     
     let levels = ["1": 0, "2": 200, "3": 400, "4": 800, "5": 1600, "6": 3200, "7": 6400, "8": 12800, "9": 25600, "10": 51200, "11": 102400, "12": 204800, "13": 409600, "14": 811200, "15": 1160000, "16": 5120000, "17": 10000000, "18": 15000000, "19": 19000000, "20": 25500000, "21": 35500000]
     
@@ -25,7 +28,15 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let historyUser = isFriend ? ServerOverlord.historyUser! : ServerOverlord.user!
 
         progress?.setProgress(Float(historyUser.exp) / Float(levels[String(historyUser.level + 1)]!), animated: true)
-        
+        Name.text = "\(historyUser.firstName) \(historyUser.lastName)"
+        Level.text = "Lv. \(historyUser.level)"
+        ImageView.image = historyUser.image
+        ImageView?.layer.borderWidth = 1
+        ImageView?.layer.borderColor = CustomColor.colorByHexString("#FF9500")
+        ImageView?.layer.masksToBounds = false
+        ImageView?.layer.cornerRadius = (ImageView?.frame.height)!/2
+        ImageView?.clipsToBounds = true
+        ImageView?.userInteractionEnabled = true
     }
 
     override func didReceiveMemoryWarning() {
