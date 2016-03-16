@@ -28,7 +28,7 @@ class LoadViewController: UIViewController, ServerResponseDelegate {
     }
     
     func getFBFriends() {
-        FBSDKGraphRequest(graphPath: "me/friends", parameters: ["fields": "id, name, first_name, last_name, picture.type(small)"]).startWithCompletionHandler({ (connection, result, error) -> Void in
+        FBSDKGraphRequest(graphPath: "me/friends", parameters: ["fields": "id, name, first_name, last_name, picture.type(normal)"]).startWithCompletionHandler({ (connection, result, error) -> Void in
             if (error == nil) {
                 let jsonFriends = JSON(result)
                 ServerOverlord.user?.friends = jsonFriends["data"].arrayValue

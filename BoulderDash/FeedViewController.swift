@@ -48,10 +48,9 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
         level?.text = String("Lv. \((ServerOverlord.user?.level)!)")
         progress?.setProgress(Float((ServerOverlord.user?.exp)!) / Float(levels[String((ServerOverlord.user?.level)! + 1)]!), animated: true)
         userImage?.image = ServerOverlord.user?.image
-        userImage?.layer.borderWidth = 0
+        userImage?.layer.borderWidth = 1
         userImage?.layer.borderColor = CustomColor.colorByHexString("#FF9500")
         userImage?.layer.masksToBounds = false
-        userImage?.layer.borderColor = UIColor.blackColor().CGColor
         userImage?.layer.cornerRadius = (userImage?.frame.height)!/2
         userImage?.clipsToBounds = true
         userImage?.userInteractionEnabled = true
@@ -80,6 +79,11 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
         for friend in (ServerOverlord.user?.friends)! {
             if friend["id"].stringValue == cellFriend["userid"].stringValue {
                 cell.friendImage?.image = UIImage(data: NSData(contentsOfURL: NSURL(string: NSString(string: friend["picture"]["data"]["url"].stringValue).stringByReplacingOccurrencesOfString("\\", withString: ""))!)!)
+                /*cell.friendImage?.layer.borderWidth = 1
+                cell.friendImage?.layer.borderColor = CustomColor.colorByHexString("#FF9500")
+                cell.friendImage?.layer.masksToBounds = false
+                cell.friendImage?.layer.cornerRadius = (cell.friendImage?.image!.size.width)! / 3
+                cell.friendImage?.clipsToBounds = true*/
                 
                 // Colored text in feed
                 let htmlString = "<font face=\"WalkwayBold\" color=\"#009fee\">\(friend["first_name"].stringValue) \(friend["last_name"].stringValue) completed a V\(cellFriend["rating"].stringValue) for \(cellFriend["exp"].intValue) exp! </font><font face=\"Arial\" color=\"gray\">\(getTimeAgo(cellFriend["climbdate"].stringValue))</font>"
@@ -203,6 +207,5 @@ class SegueLabel: UILabel {
 class FeedTableViewCell: UITableViewCell {
     @IBOutlet var friendImage: UIImageView?
     @IBOutlet var headline: UILabel?
-    @IBOutlet var eventTime: UILabel?
 }
 
