@@ -25,8 +25,6 @@
             <string>WalkwayBold</string>
             <string>WalkwayBold</string>
             <string>WalkwayBold</string>
-            <string>WalkwayBold</string>
-            <string>WalkwayBold</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -503,63 +501,62 @@
                                     <segue destination="Bmq-EK-mfi" kind="unwind" unwindAction="unwindFromNewClimb:" id="lkW-cR-oER"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5X4-wo-vH8" userLabel="History">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5X4-wo-vH8" userLabel="History">
                                 <rect key="frame" x="0.0" y="191" width="600" height="409"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" id="g3p-wV-0oy" customClass="HistoryTableViewCell" customModule="BoulderDash" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" rowHeight="140" id="g3p-wV-0oy" customClass="HistoryTableViewCell" customModule="BoulderDash" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g3p-wV-0oy" id="asq-jw-k8h">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" tableViewCell="g3p-wV-0oy" id="asq-jw-k8h">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="139"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dZ-N6-qY2">
-                                                    <rect key="frame" x="8" y="11" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="0.97647058819999999" green="0.58431372550000005" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJD-NO-EWm">
-                                                    <rect key="frame" x="58" y="11" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="0.97647058819999999" green="0.58431372550000005" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4O-Zj-7aN">
-                                                    <rect key="frame" x="108" y="11" width="42" height="21"/>
+                                                    <rect key="frame" x="8" y="11" width="584" height="21"/>
                                                     <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="0.97647058819999999" green="0.58431372550000005" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILI-6e-SdJ">
-                                                    <rect key="frame" x="158" y="11" width="42" height="21"/>
+                                                    <rect key="frame" x="8" y="54" width="584" height="21"/>
                                                     <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="0.97647058819999999" green="0.58431372550000005" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXF-cj-YOM">
-                                                    <rect key="frame" x="208" y="11" width="42" height="21"/>
+                                                    <rect key="frame" x="8" y="94" width="584" height="21"/>
                                                     <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="0.97647058819999999" green="0.58431372550000005" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="————————————————————————————————————" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvl-An-e5P">
+                                                    <rect key="frame" x="0.0" y="118" width="600" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.19607843137254902" green="0.60392156862745094" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="DXF-cj-YOM" secondAttribute="trailing" constant="342" id="0N7-if-UHt"/>
-                                                <constraint firstItem="ILI-6e-SdJ" firstAttribute="leading" secondItem="X4O-Zj-7aN" secondAttribute="trailing" constant="8" id="0Xh-rN-fiC"/>
-                                                <constraint firstItem="6dZ-N6-qY2" firstAttribute="leading" secondItem="asq-jw-k8h" secondAttribute="leadingMargin" id="2mp-zd-mCG"/>
-                                                <constraint firstItem="DXF-cj-YOM" firstAttribute="leading" secondItem="ILI-6e-SdJ" secondAttribute="trailing" constant="8" id="3Hi-BC-0oy"/>
-                                                <constraint firstItem="X4O-Zj-7aN" firstAttribute="leading" secondItem="TJD-NO-EWm" secondAttribute="trailing" constant="8" id="eV1-x8-pAB"/>
-                                                <constraint firstItem="TJD-NO-EWm" firstAttribute="leading" secondItem="6dZ-N6-qY2" secondAttribute="trailing" constant="8" id="oEI-6t-F91"/>
+                                                <constraint firstItem="ILI-6e-SdJ" firstAttribute="top" secondItem="6dZ-N6-qY2" secondAttribute="bottom" constant="22" id="DvI-YL-eik"/>
+                                                <constraint firstItem="rvl-An-e5P" firstAttribute="top" secondItem="DXF-cj-YOM" secondAttribute="bottom" constant="3" id="FOd-Ny-6gB"/>
+                                                <constraint firstItem="ILI-6e-SdJ" firstAttribute="trailing" secondItem="asq-jw-k8h" secondAttribute="trailingMargin" id="Ggj-hx-3eC"/>
+                                                <constraint firstItem="rvl-An-e5P" firstAttribute="leading" secondItem="asq-jw-k8h" secondAttribute="leadingMargin" constant="-8" id="MTf-BV-PMO"/>
+                                                <constraint firstItem="DXF-cj-YOM" firstAttribute="leading" secondItem="asq-jw-k8h" secondAttribute="leadingMargin" id="MgJ-yr-OE9"/>
+                                                <constraint firstItem="6dZ-N6-qY2" firstAttribute="leading" secondItem="asq-jw-k8h" secondAttribute="leadingMargin" id="Pfn-yr-m2y"/>
+                                                <constraint firstItem="ILI-6e-SdJ" firstAttribute="leading" secondItem="asq-jw-k8h" secondAttribute="leadingMargin" id="ReN-qQ-fiR"/>
+                                                <constraint firstItem="DXF-cj-YOM" firstAttribute="trailing" secondItem="asq-jw-k8h" secondAttribute="trailingMargin" id="Vgo-PS-zU7"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="rvl-An-e5P" secondAttribute="trailing" constant="-8" id="eQH-D6-Itx"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="rvl-An-e5P" secondAttribute="bottom" constant="-8" id="fU4-Oc-Lfm"/>
+                                                <constraint firstItem="DXF-cj-YOM" firstAttribute="top" secondItem="ILI-6e-SdJ" secondAttribute="bottom" constant="19" id="gR9-cN-93u"/>
+                                                <constraint firstItem="6dZ-N6-qY2" firstAttribute="trailing" secondItem="asq-jw-k8h" secondAttribute="trailingMargin" id="qkk-pS-epD"/>
+                                                <constraint firstItem="6dZ-N6-qY2" firstAttribute="top" secondItem="asq-jw-k8h" secondAttribute="topMargin" constant="3" id="rWB-kJ-oJj"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="ClimbDateLabel" destination="DXF-cj-YOM" id="i1f-lX-TSx"/>
                                             <outlet property="ClimbNameLabel" destination="6dZ-N6-qY2" id="qqq-g8-6gb"/>
-                                            <outlet property="DifficultyLabel" destination="TJD-NO-EWm" id="kHi-XG-gsg"/>
                                             <outlet property="ExpEarnedLabel" destination="ILI-6e-SdJ" id="dw3-e4-ccf"/>
-                                            <outlet property="LocationLabel" destination="X4O-Zj-7aN" id="O1F-Y6-wjx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

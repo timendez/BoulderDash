@@ -31,15 +31,29 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("HistoryCell", forIndexPath: indexPath) as! HistoryTableViewCell
 
-        cell.ClimbDateLabel.text = (ServerOverlord.climbHistory)![indexPath.row]["climbdate"].stringValue
         cell.ClimbNameLabel.text = (ServerOverlord.climbHistory)![indexPath.row]["name"].stringValue
-        cell.DifficultyLabel.text = "V\((ServerOverlord.climbHistory)![indexPath.row]["rating"].stringValue)"
-        cell.LocationLabel.text = (ServerOverlord.climbHistory)![indexPath.row]["location"].stringValue
-        cell.ExpEarnedLabel.text = (ServerOverlord.climbHistory)![indexPath.row]["exp"].stringValue
-        
+        cell.ExpEarnedLabel.text = "\((ServerOverlord.climbHistory)![indexPath.row]["exp"].stringValue) experience points earned"
         cell.ClimbNameLabel.text = cell.ClimbNameLabel.text == "null" ? "Unnamed" : cell.ClimbNameLabel.text
-        cell.LocationLabel.text = cell.LocationLabel.text == "null" ? "No location" : cell.LocationLabel.text
+        cell.ClimbNameLabel.text = "\((cell.ClimbNameLabel.text)!) - V\((ServerOverlord.climbHistory)![indexPath.row]["rating"].stringValue)"
         
+        // Making date look normal
+        let components = NSDateComponents()
+        let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)
+        let dateFormatter = NSDateFormatter()
+        calendar?.timeZone = NSTimeZone(abbreviation: "GMT")!
+        let occurred = (ServerOverlord.climbHistory)![indexPath.row]["climbdate"].stringValue as NSString!
+        components.year = Int(occurred.substringWithRange(NSRange(location: 0, length: 4)))!
+        components.month = Int(occurred.substringWithRange(NSRange(location: 5, length: 2)))!
+        components.day = Int(occurred.substringWithRange(NSRange(location: 8, length: 2)))!
+        components.hour = Int(occurred.substringWithRange(NSRange(location: 11, length: 2)))!
+        components.minute = Int(occurred.substringWithRange(NSRange(location: 14, length: 2)))!
+        let date = calendar?.dateFromComponents(components)
+        dateFormatter.dateStyle = NSDateFormatterStyle.FullStyle
+        let convertedDate = dateFormatter.stringFromDate(date!)
+        let location = (ServerOverlord.climbHistory)![indexPath.row]["location"].stringValue == "null" ? "No location" : (ServerOverlord.climbHistory)![indexPath.row]["location"].stringValue
+        
+        cell.ClimbDateLabel.text = "\(convertedDate) at \(location)"
+
         return cell
     }
 
@@ -58,7 +72,5 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
 class HistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var ClimbDateLabel: UILabel!
     @IBOutlet weak var ClimbNameLabel: UILabel!
-    @IBOutlet weak var DifficultyLabel: UILabel!
-    @IBOutlet weak var LocationLabel: UILabel!
     @IBOutlet weak var ExpEarnedLabel: UILabel!
 }
