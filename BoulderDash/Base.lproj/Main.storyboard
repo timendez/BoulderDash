@@ -302,7 +302,7 @@
                                         <rect key="frame" x="0.0" y="10" width="560" height="80"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wm-3I-sfU">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="351" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="zhF-Hl-Iht"/>
                                                 </constraints>
@@ -311,7 +311,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name (First, Last)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-zW-WSW" customClass="SegueLabel" customModule="BoulderDash" customModuleProvider="target">
-                                                <rect key="frame" x="100" y="0.0" width="380" height="80"/>
+                                                <rect key="frame" x="351" y="0.0" width="129" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="5q9-Tm-7TV"/>
                                                 </constraints>
@@ -467,37 +467,13 @@
                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="f7T-yJ-F6m">
-                                <rect key="frame" x="79" y="182" width="442" height="2"/>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="f7T-yJ-F6m">
+                                <rect key="frame" x="79" y="182" width="442" height="10"/>
                                 <color key="tintColor" red="0.97647058819999999" green="0.58431372550000005" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="10" id="Md3-U6-zHc"/>
                                 </constraints>
                             </progressView>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGd-Hc-Oth" userLabel="Metadata">
-                                <rect key="frame" x="275" y="104" width="246" height="80"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwQ-KK-WlW">
-                                        <rect key="frame" x="0.0" y="0.0" width="37" height="80"/>
-                                        <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="17"/>
-                                        <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name (First, Last)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKe-au-9gh">
-                                        <rect key="frame" x="37" y="0.0" width="129" height="80"/>
-                                        <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="17"/>
-                                        <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vvy-jq-muX">
-                                        <rect key="frame" x="166" y="0.0" width="80" height="80"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="8Xn-0S-HsO"/>
-                                            <constraint firstAttribute="height" constant="80" id="cPc-Pc-nsD"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H8z-Pz-Jme">
                                 <rect key="frame" x="20" y="66" width="46" height="30"/>
                                 <state key="normal" title="Back"/>
@@ -505,7 +481,7 @@
                                     <segue destination="Bmq-EK-mfi" kind="unwind" unwindAction="unwindFromNewClimb:" id="lkW-cR-oER"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5X4-wo-vH8" userLabel="History">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5X4-wo-vH8" userLabel="History">
                                 <rect key="frame" x="0.0" y="191" width="600" height="409"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -565,22 +541,60 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VGd-Hc-Oth" userLabel="Metadata">
+                                <rect key="frame" x="177" y="103" width="560" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OwQ-KK-WlW">
+                                        <rect key="frame" x="0.0" y="0.0" width="351" height="80"/>
+                                        <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name (First, Last)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jKe-au-9gh">
+                                        <rect key="frame" x="351" y="0.0" width="129" height="80"/>
+                                        <fontDescription key="fontDescription" name="WalkwayBold" family="Walkway Bold" pointSize="17"/>
+                                        <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vvy-jq-muX">
+                                        <rect key="frame" x="480" y="0.0" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="8Xn-0S-HsO"/>
+                                            <constraint firstAttribute="height" constant="80" id="cPc-Pc-nsD"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="OwQ-KK-WlW" firstAttribute="top" secondItem="VGd-Hc-Oth" secondAttribute="topMargin" id="1nr-LA-Npn"/>
+                                    <constraint firstItem="OwQ-KK-WlW" firstAttribute="leading" secondItem="VGd-Hc-Oth" secondAttribute="leadingMargin" constant="15" id="5zL-dC-XHR"/>
+                                    <constraint firstItem="vvy-jq-muX" firstAttribute="bottom" secondItem="VGd-Hc-Oth" secondAttribute="bottomMargin" id="DZT-7R-q7R"/>
+                                    <constraint firstItem="OwQ-KK-WlW" firstAttribute="bottom" secondItem="VGd-Hc-Oth" secondAttribute="bottomMargin" id="awf-zi-rXi"/>
+                                    <constraint firstItem="vvy-jq-muX" firstAttribute="top" secondItem="VGd-Hc-Oth" secondAttribute="topMargin" id="htt-aH-Wem"/>
+                                    <constraint firstItem="vvy-jq-muX" firstAttribute="trailing" secondItem="VGd-Hc-Oth" secondAttribute="trailingMargin" id="kh6-wn-3fE"/>
+                                    <constraint firstItem="vvy-jq-muX" firstAttribute="leading" secondItem="jKe-au-9gh" secondAttribute="trailing" id="nu0-me-1I0"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="H8z-Pz-Jme" firstAttribute="centerY" secondItem="2es-hr-RRw" secondAttribute="centerY" id="B5V-X2-ke4"/>
-                            <constraint firstItem="VGd-Hc-Oth" firstAttribute="top" secondItem="2es-hr-RRw" secondAttribute="bottom" constant="8" id="HP9-yt-rgN"/>
+                            <constraint firstItem="5X4-wo-vH8" firstAttribute="top" secondItem="f7T-yJ-F6m" secondAttribute="bottom" constant="7" id="GYo-E9-F7I"/>
                             <constraint firstItem="rJx-PE-b7f" firstAttribute="top" secondItem="VGd-Hc-Oth" secondAttribute="bottom" constant="416" id="K3W-b9-xo9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VGd-Hc-Oth" secondAttribute="trailing" id="PgZ-Fd-U4P"/>
                             <constraint firstAttribute="trailingMargin" secondItem="f7T-yJ-F6m" secondAttribute="trailing" id="QL3-VK-BJL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="VGd-Hc-Oth" secondAttribute="trailing" constant="59" id="XEK-IZ-gco"/>
+                            <constraint firstItem="VGd-Hc-Oth" firstAttribute="bottom" secondItem="f7T-yJ-F6m" secondAttribute="top" id="XCE-zc-nu4"/>
                             <constraint firstItem="2es-hr-RRw" firstAttribute="centerX" secondItem="ePc-aq-7KT" secondAttribute="centerX" id="XyH-M4-FJ0"/>
                             <constraint firstItem="f7T-yJ-F6m" firstAttribute="leading" secondItem="ePc-aq-7KT" secondAttribute="leadingMargin" id="Yy5-vT-imu"/>
-                            <constraint firstItem="VGd-Hc-Oth" firstAttribute="leading" secondItem="ePc-aq-7KT" secondAttribute="leadingMargin" constant="255" id="aRe-wP-Auz"/>
                             <constraint firstItem="2es-hr-RRw" firstAttribute="top" secondItem="0lZ-2h-HpC" secondAttribute="bottom" id="eI1-t9-M74"/>
+                            <constraint firstItem="VGd-Hc-Oth" firstAttribute="top" secondItem="2es-hr-RRw" secondAttribute="bottom" id="eVW-u9-7nh"/>
+                            <constraint firstItem="VGd-Hc-Oth" firstAttribute="leading" secondItem="ePc-aq-7KT" secondAttribute="leadingMargin" id="kRq-9l-cC3"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="HistoryTableView" destination="5X4-wo-vH8" id="aNY-VL-gt7"/>
+                        <outlet property="ImageView" destination="vvy-jq-muX" id="7Wm-Ct-Jyb"/>
+                        <outlet property="Level" destination="OwQ-KK-WlW" id="3o2-ZC-aQg"/>
+                        <outlet property="Name" destination="jKe-au-9gh" id="F7N-Bz-qPB"/>
                         <outlet property="progress" destination="f7T-yJ-F6m" id="NsG-74-h4G"/>
                     </connections>
                 </viewController>

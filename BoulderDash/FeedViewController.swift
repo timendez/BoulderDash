@@ -36,9 +36,6 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
         super.viewDidLoad()
         ServerOverlord.delegate = self
         
-        print("In Feed viewDidLoad")
-        print("User has id \((ServerOverlord.user?.id)!)")
-        
         nameLabel?.delegate = self
         userImage?.delegate = self
         feed?.delegate = self
@@ -71,7 +68,21 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
             return 0
         }
     }
+    
+    // Cell is tapped, set friend information in ServerOverlord and get climbs
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let friendId = friendFeed![indexPath.row]["userid"].stringValue
+        let cell = tableView.cellForRowAtIndexPath(indexPath) as! FeedTableViewCell
+        let picture = cell.friendImage?.image!
+        let first = cell.firstName
+        let last = cell.lastName
 
+        ServerOverlord.historyUser = User(firstName: first!, lastName: last!, id: friendId, image: picture!)
+        ServerOverlord.isFriendHistory = true
+        ServerOverlord.getHistoryUser(friendId)
+    }
+
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("FeedCell", forIndexPath: indexPath) as! FeedTableViewCell
         let cellFriend = friendFeed![indexPath.row]
@@ -94,12 +105,15 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
                     let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
                     cell.headline?.attributedText = attributedString
                     
-                } catch _ {
+                }
+                catch _ {
                     print("Cannot create attributed string in user feed.")
                 }
+                
+                cell.firstName = friend["first_name"].stringValue
+                cell.lastName = friend["last_name"].stringValue
             }
         }
-        print("adding cell")
         return cell
     }
     
@@ -150,7 +164,10 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
     }
 
     func serverDidRespond(sender: String, data: JSON) {
-        if(sender == "getClimbs") {
+        if(sender == "getHistoryUser") {
+            ServerOverlord.getClimbs((ServerOverlord.historyUser?.id)!)
+        }
+        else if(sender == "getClimbs") {
             NSOperationQueue.mainQueue().addOperationWithBlock {
                 self.performSegueWithIdentifier("segueToHistory", sender: self)
             }
@@ -159,7 +176,8 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
 
     // User touched their picture or name
     func viewWasTouched() {
-        ServerOverlord.getClimbs()
+        ServerOverlord.isFriendHistory = false
+        ServerOverlord.getClimbs((ServerOverlord.user?.id)!)
     }
     
     @IBAction func unwindFromNewClimb(segue: UIStoryboardSegue) {
@@ -207,5 +225,8 @@ class SegueLabel: UILabel {
 class FeedTableViewCell: UITableViewCell {
     @IBOutlet var friendImage: UIImageView?
     @IBOutlet var headline: UILabel?
+    
+    var firstName: String?;
+    var lastName: String?;
 }
 

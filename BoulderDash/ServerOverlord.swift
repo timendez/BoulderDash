@@ -27,6 +27,8 @@ class ServerOverlord {
     static var delegate: ServerResponseDelegate?
     static var user: User?
     static var climbHistory: JSON?
+    static var historyUser: User?
+    static var isFriendHistory = false
     
    /*
     *
@@ -99,10 +101,31 @@ class ServerOverlord {
         download.resume()
     }
     
+    static func getHistoryUser(userId: String) {
+        print("Sending http://boulderdash.herokuapp.com/user?userId=\(userId)")
+        let url = NSURL(string: "http://boulderdash.herokuapp.com/user?userId=\(userId)")
+        let session = NSURLSession.sharedSession()
+        let download = session.dataTaskWithURL(url!) {
+            (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
+            if let data = data {
+                let json = JSON(data: data)
+
+                historyUser!.level = json[0]["level"] ? json[0]["level"].intValue : 1
+                historyUser!.exp = json[0]["exp"] ? json[0]["exp"].intValue : 0
+                print("About to call serverDidRespond")
+                delegate?.serverDidRespond("getHistoryUser", data: nil)
+            }
+            else {
+                print("ERROR: Could not fetch data in getUser")
+            }
+        }
+        download.resume()
+    }
+    
     // Get the climbs of the user for the climb history
-    static func getClimbs() {
-        print("Sending http://boulderdash.herokuapp.com/climbs?userId=\(user!.id)")
-        let url = NSURL(string: "http://boulderdash.herokuapp.com/climbs?userId=\(user!.id)")
+    static func getClimbs(userId: String) {
+        print("Sending http://boulderdash.herokuapp.com/climbs?userId=\(userId)")
+        let url = NSURL(string: "http://boulderdash.herokuapp.com/climbs?userId=\(userId)")
         let session = NSURLSession.sharedSession()
         let download = session.dataTaskWithURL(url!) {
             (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
