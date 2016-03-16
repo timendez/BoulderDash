@@ -33,9 +33,13 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         cell.ClimbDateLabel.text = (ServerOverlord.climbHistory)![indexPath.row]["climbdate"].stringValue
         cell.ClimbNameLabel.text = (ServerOverlord.climbHistory)![indexPath.row]["name"].stringValue
-        cell.DifficultyLabel.text = (ServerOverlord.climbHistory)![indexPath.row]["rating"].stringValue
+        cell.DifficultyLabel.text = "V\((ServerOverlord.climbHistory)![indexPath.row]["rating"].stringValue)"
         cell.LocationLabel.text = (ServerOverlord.climbHistory)![indexPath.row]["location"].stringValue
-        cell.ExpEarnedLabel.text = (ServerOverlord.climbHistory)![indexPath.row]["expEarned"].stringValue
+        cell.ExpEarnedLabel.text = (ServerOverlord.climbHistory)![indexPath.row]["exp"].stringValue
+        
+        cell.ClimbNameLabel.text = cell.ClimbNameLabel.text == "null" ? "Unnamed" : cell.ClimbNameLabel.text
+        cell.LocationLabel.text = cell.LocationLabel.text == "null" ? "No location" : cell.LocationLabel.text
+        
         return cell
     }
 
