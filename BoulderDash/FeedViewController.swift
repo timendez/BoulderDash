@@ -106,6 +106,7 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
     // Calculate how long ago a climb occurred
     func getTimeAgo(occurred: NSString) -> NSString {
         let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)
+        calendar?.timeZone = NSTimeZone(abbreviation: "GMT")!
         let currentDate = NSDate()
         let components = NSDateComponents()
         var timeAgo = ""
@@ -132,6 +133,11 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
         if betweenComponents.minute > 0 {
             timeAgo += "\(String(betweenComponents.minute))m"
         }
+        
+        if(timeAgo == "") {
+            timeAgo += "1m"
+        }
+        
         return "\(timeAgo) ago"
     }
     
