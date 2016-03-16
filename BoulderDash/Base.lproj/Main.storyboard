@@ -301,7 +301,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nS0-H1-MeF" userLabel="Metadata">
                                         <rect key="frame" x="0.0" y="10" width="560" height="80"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wm-3I-sfU">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Wm-3I-sfU">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="100" id="zhF-Hl-Iht"/>
@@ -310,7 +310,7 @@
                                                 <color key="textColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name (First, Last)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-zW-WSW" customClass="SegueLabel" customModule="BoulderDash" customModuleProvider="target">
+                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name (First, Last)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-zW-WSW" customClass="SegueLabel" customModule="BoulderDash" customModuleProvider="target">
                                                 <rect key="frame" x="100" y="0.0" width="380" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="5q9-Tm-7TV"/>
@@ -469,6 +469,10 @@
                             </label>
                             <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="f7T-yJ-F6m">
                                 <rect key="frame" x="79" y="182" width="442" height="2"/>
+                                <color key="tintColor" red="0.97647058819999999" green="0.58431372550000005" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="Md3-U6-zHc"/>
+                                </constraints>
                             </progressView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGd-Hc-Oth" userLabel="Metadata">
                                 <rect key="frame" x="275" y="104" width="246" height="80"/>
@@ -567,15 +571,17 @@
                             <constraint firstItem="H8z-Pz-Jme" firstAttribute="centerY" secondItem="2es-hr-RRw" secondAttribute="centerY" id="B5V-X2-ke4"/>
                             <constraint firstItem="VGd-Hc-Oth" firstAttribute="top" secondItem="2es-hr-RRw" secondAttribute="bottom" constant="8" id="HP9-yt-rgN"/>
                             <constraint firstItem="rJx-PE-b7f" firstAttribute="top" secondItem="VGd-Hc-Oth" secondAttribute="bottom" constant="416" id="K3W-b9-xo9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="f7T-yJ-F6m" secondAttribute="trailing" id="QL3-VK-BJL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VGd-Hc-Oth" secondAttribute="trailing" constant="59" id="XEK-IZ-gco"/>
                             <constraint firstItem="2es-hr-RRw" firstAttribute="centerX" secondItem="ePc-aq-7KT" secondAttribute="centerX" id="XyH-M4-FJ0"/>
+                            <constraint firstItem="f7T-yJ-F6m" firstAttribute="leading" secondItem="ePc-aq-7KT" secondAttribute="leadingMargin" id="Yy5-vT-imu"/>
                             <constraint firstItem="VGd-Hc-Oth" firstAttribute="leading" secondItem="ePc-aq-7KT" secondAttribute="leadingMargin" constant="255" id="aRe-wP-Auz"/>
                             <constraint firstItem="2es-hr-RRw" firstAttribute="top" secondItem="0lZ-2h-HpC" secondAttribute="bottom" id="eI1-t9-M74"/>
-                            <constraint firstItem="f7T-yJ-F6m" firstAttribute="centerX" secondItem="ePc-aq-7KT" secondAttribute="centerX" id="gI1-tr-izB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="HistoryTableView" destination="5X4-wo-vH8" id="aNY-VL-gt7"/>
+                        <outlet property="progress" destination="f7T-yJ-F6m" id="NsG-74-h4G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IeB-TX-DpR" userLabel="First Responder" sceneMemberID="firstResponder"/>

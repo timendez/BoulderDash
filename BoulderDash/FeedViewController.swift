@@ -46,8 +46,6 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
         
         nameLabel?.text = "\((ServerOverlord.user?.firstName)!) \((ServerOverlord.user?.lastName)!)"
         level?.text = String("Lv. \((ServerOverlord.user?.level)!)")
-        print((ServerOverlord.user?.exp)!)
-        print((ServerOverlord.user?.level)!)
         progress?.setProgress(Float((ServerOverlord.user?.exp)!) / Float(levels[String((ServerOverlord.user?.level)! + 1)]!), animated: true)
         userImage?.image = ServerOverlord.user?.image
         userImage?.layer.borderWidth = 0
@@ -63,7 +61,6 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
         let fbLoginButton: FBSDKLoginButton! = FBSDKLoginButton()
         self.view.addSubview(fbLoginButton)
         fbLoginButton.delegate = self
-        //fbLoginButton.bounds = CGRectMake(self.view.center.x, self.view.center.y, 200, 40)
         fbLoginButton.center = CGPointMake(self.view.center.x / CGFloat(1.53), self.view.center.y / CGFloat(2.45))
     }
     
@@ -86,7 +83,6 @@ class FeedViewController: UIViewController, ViewTouchedDelegate, UITableViewDele
                 
                 // Colored text in feed
                 let htmlString = "<font face=\"WalkwayBold\" color=\"#009fee\">\(friend["first_name"].stringValue) \(friend["last_name"].stringValue) completed a V\(cellFriend["rating"].stringValue) for \(cellFriend["exp"].intValue) exp! </font><font face=\"Arial\" color=\"gray\">\(getTimeAgo(cellFriend["climbdate"].stringValue))</font>"
-                print(cellFriend)
 
                 let encodedData = htmlString.dataUsingEncoding(NSUTF8StringEncoding)!
                 let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]

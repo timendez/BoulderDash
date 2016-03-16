@@ -11,12 +11,16 @@ import UIKit
 class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var HistoryTableView: UITableView!
+    @IBOutlet weak var progress: UIProgressView!
+    
+    let levels = ["1": 0, "2": 200, "3": 400, "4": 800, "5": 1600, "6": 3200, "7": 6400, "8": 12800, "9": 25600, "10": 51200, "11": 102400, "12": 204800, "13": 409600, "14": 811200, "15": 1160000, "16": 5120000, "17": 10000000, "18": 15000000, "19": 19000000, "20": 25500000, "21": 35500000]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         HistoryTableView?.delegate = self
         HistoryTableView?.dataSource = self
-        // Do any additional setup after loading the view.
+        
+        progress?.setProgress(Float((ServerOverlord.user?.exp)!) / Float(levels[String((ServerOverlord.user?.level)! + 1)]!), animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +38,17 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.ClimbNameLabel.text = (ServerOverlord.climbHistory)![indexPath.row]["name"].stringValue
         cell.ExpEarnedLabel.text = "\((ServerOverlord.climbHistory)![indexPath.row]["exp"].stringValue) experience points earned"
         cell.ClimbNameLabel.text = cell.ClimbNameLabel.text == "null" ? "Unnamed" : cell.ClimbNameLabel.text
-        cell.ClimbNameLabel.text = "\((cell.ClimbNameLabel.text)!) - V\((ServerOverlord.climbHistory)![indexPath.row]["rating"].stringValue)"
+        
+        // Name and Difficulty
+        let htmlName = "<font size=5 face=\"WalkwayBold\" color=\"#009fee\">\((cell.ClimbNameLabel.text)!) <font color=\"gray\">V\((ServerOverlord.climbHistory)![indexPath.row]["rating"].stringValue)</font></font>"
+        let encodedData = htmlName.dataUsingEncoding(NSUTF8StringEncoding)!
+        let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+        do {
+            let attributedString = try NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil)
+            cell.ClimbNameLabel.attributedText = attributedString
+        } catch _ {
+            print("Cannot create attributed string in user feed.")
+        }
         
         // Making date look normal
         let components = NSDateComponents()
