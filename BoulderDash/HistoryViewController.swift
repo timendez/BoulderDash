@@ -82,7 +82,8 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
         let convertedDate = dateFormatter.stringFromDate(date!)
         let location = (ServerOverlord.climbHistory)![indexPath.row]["location"].stringValue == "null" ? "No location" : (ServerOverlord.climbHistory)![indexPath.row]["location"].stringValue
         
-        cell.ClimbDateLabel.text = "\(convertedDate) at \(location)"
+        cell.ClimbDateLabel.text = "\(convertedDate)"
+        cell.ClimbLocationLabel.text = "Climbed at \(location)"
 
         return cell
     }
@@ -102,5 +103,6 @@ class HistoryViewController: UIViewController, UITableViewDelegate, UITableViewD
 class HistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var ClimbDateLabel: UILabel!
     @IBOutlet weak var ClimbNameLabel: UILabel!
+    @IBOutlet weak var ClimbLocationLabel: UILabel!
     @IBOutlet weak var ExpEarnedLabel: UILabel!
 }

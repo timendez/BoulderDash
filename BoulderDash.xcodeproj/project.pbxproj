@@ -470,7 +470,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Users/classroomtech/Downloads/FacebookSDK,
 					"$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME)/include",
 				);
 				INFOPLIST_FILE = BoulderDash/Info.plist;
@@ -487,7 +486,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Users/classroomtech/Downloads/FacebookSDK,
 					"$(OBJROOT)/UninstalledProducts/$(PLATFORM_NAME)/include",
 				);
 				INFOPLIST_FILE = BoulderDash/Info.plist;
