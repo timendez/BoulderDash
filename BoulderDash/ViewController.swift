@@ -22,11 +22,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, ServerRes
 
         // Facebook Login
         if (FBSDKAccessToken.currentAccessToken() != nil) {
-            print("User logged in...")
             beginLoadProcess()
 
         } else {
-            print("User not logged in...")
             let fbLoginButton: FBSDKLoginButton! = FBSDKLoginButton()
             self.view.addSubview(fbLoginButton)
             fbLoginButton.delegate = self
@@ -36,7 +34,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, ServerRes
     }
     
     @IBAction func unwindFromFeed(segue: UIStoryboardSegue) {
-        print("Unwound from feed")
         ServerOverlord.delegate = self
         let fbLoginButton: FBSDKLoginButton! = FBSDKLoginButton()
         self.view.addSubview(fbLoginButton)
@@ -51,8 +48,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, ServerRes
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        print("User Just Logged In")
-
+        
         if (error != nil) {
             // Process error
         }
@@ -88,7 +84,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, ServerRes
     
     // Added to stop segfault, making sure every server request is atomic
     func serverDidRespond(sender: String, data: JSON) {
-        print("rlly tho")
         NSOperationQueue.mainQueue().addOperationWithBlock {
             self.performSegueWithIdentifier("segueToLoad", sender: self)
         }
@@ -98,7 +93,6 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate, ServerRes
     *
     */
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        print("User Logged Out")
     }
     
 /*

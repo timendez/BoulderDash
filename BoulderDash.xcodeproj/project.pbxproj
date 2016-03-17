@@ -25,7 +25,6 @@
 		A612960A1C865A26005B2CC5 /* Walkway_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A61296081C8659FD005B2CC5 /* Walkway_Bold.ttf */; };
 		A612960B1C865A26005B2CC5 /* Walkway_SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A61296091C8659FD005B2CC5 /* Walkway_SemiBold.ttf */; };
 		A612960D1C866682005B2CC5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A612960C1C866682005B2CC5 /* FeedViewController.swift */; };
-		CE8280FE1C750DD6002A14C6 /* TestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8280FD1C750DD6002A14C6 /* TestController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +69,6 @@
 		A61296081C8659FD005B2CC5 /* Walkway_Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Walkway_Bold.ttf; sourceTree = "<group>"; };
 		A61296091C8659FD005B2CC5 /* Walkway_SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Walkway_SemiBold.ttf; sourceTree = "<group>"; };
 		A612960C1C866682005B2CC5 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		CE8280FD1C750DD6002A14C6 /* TestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +137,6 @@
 				95946D6B1C6D56040031B15B /* ViewController.swift */,
 				95B0CA411C90133500B3EEE8 /* LoadViewController.swift */,
 				95B5F6321C751BFA0025903E /* User.swift */,
-				CE8280FD1C750DD6002A14C6 /* TestController.swift */,
 				95946D6D1C6D56040031B15B /* Main.storyboard */,
 				95946D701C6D56040031B15B /* Assets.xcassets */,
 				95946D751C6D56040031B15B /* Info.plist */,
@@ -313,7 +310,6 @@
 			files = (
 				95B0CA421C90133500B3EEE8 /* LoadViewController.swift in Sources */,
 				95B5F6331C751BFB0025903E /* User.swift in Sources */,
-				CE8280FE1C750DD6002A14C6 /* TestController.swift in Sources */,
 				A612960D1C866682005B2CC5 /* FeedViewController.swift in Sources */,
 				95F551CC1C8FDD4700A5FE65 /* SwiftyJSON.swift in Sources */,
 				95F54D121C976753005A864C /* HistoryViewController.swift in Sources */,

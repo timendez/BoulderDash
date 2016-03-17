@@ -35,8 +35,7 @@ class ServerOverlord {
     */
     static func addClimb(name: String, loc: String, rating: Int, flash: Bool, down: Bool, campus: Bool, toe: Bool, outdoor: Bool) {
         let climbDate = NSDate()
-        
-        print("http://boulderdash.herokuapp.com/new-climb?userId=\(user!.id)&climbName=\(name.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!)&location=\(loc.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!)&rating=\(rating)&outdoor=\(outdoor)&flash=\(flash)&campus=\(campus)&down=\(down)&toetouch=\(toe)&climbDate=\((climbDate.description).stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!)")
+
         let req = NSMutableURLRequest(URL: NSURL(string: "http://boulderdash.herokuapp.com/new-climb?userId=\(user!.id)&climbName=\(name.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!)&location=\(loc.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!)&rating=\(rating)&outdoor=\(outdoor)&flash=\(flash)&campus=\(campus)&down=\(down)&toetouch=\(toe)&climbDate=\((climbDate.description).stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!)")!)
         let session = NSURLSession.sharedSession()
         
@@ -46,7 +45,7 @@ class ServerOverlord {
             (data, res, error) -> Void in
             
             let json = JSON(data: data!)
-            
+
             user?.exp = json["newExp"].intValue
             user?.level = json["newLevel"].intValue
             
@@ -59,8 +58,6 @@ class ServerOverlord {
     * Adds a new user to the database with id, firstName, and lastName
     */
     static func addUser() {
-        print ("Sending http://boulderdash.herokuapp.com/new-user?userId=\(user!.id)&first=\(user!.firstName)&last=\(user!.lastName)")
-        
         let req = NSMutableURLRequest(URL: NSURL(string: "http://boulderdash.herokuapp.com/new-user?userId=\(user!.id)&first=\(user!.firstName)&last=\(user!.lastName)")!)
         let session = NSURLSession.sharedSession()
         
@@ -78,7 +75,6 @@ class ServerOverlord {
     * Calls delegate method serverDidRespond when finished
     */
     static func getUser() {
-        print("Sending http://boulderdash.herokuapp.com/user?userId=\(user!.id)")
         let url = NSURL(string: "http://boulderdash.herokuapp.com/user?userId=\(user!.id)")
         let session = NSURLSession.sharedSession()
         let download = session.dataTaskWithURL(url!) {
@@ -91,7 +87,6 @@ class ServerOverlord {
                 }
                 user!.level = json[0]["level"] ? json[0]["level"].intValue : 1
                 user!.exp = json[0]["exp"] ? json[0]["exp"].intValue : 0
-                print("About to call serverDidRespond")
                 delegate?.serverDidRespond("getUser", data: nil)
             }
             else {
@@ -102,7 +97,6 @@ class ServerOverlord {
     }
     
     static func getHistoryUser(userId: String) {
-        print("Sending http://boulderdash.herokuapp.com/user?userId=\(userId)")
         let url = NSURL(string: "http://boulderdash.herokuapp.com/user?userId=\(userId)")
         let session = NSURLSession.sharedSession()
         let download = session.dataTaskWithURL(url!) {
@@ -112,7 +106,6 @@ class ServerOverlord {
 
                 historyUser!.level = json[0]["level"] ? json[0]["level"].intValue : 1
                 historyUser!.exp = json[0]["exp"] ? json[0]["exp"].intValue : 0
-                print("About to call serverDidRespond")
                 delegate?.serverDidRespond("getHistoryUser", data: nil)
             }
             else {
@@ -124,14 +117,12 @@ class ServerOverlord {
     
     // Get the climbs of the user for the climb history
     static func getClimbs(userId: String) {
-        print("Sending http://boulderdash.herokuapp.com/climbs?userId=\(userId)")
         let url = NSURL(string: "http://boulderdash.herokuapp.com/climbs?userId=\(userId)")
         let session = NSURLSession.sharedSession()
         let download = session.dataTaskWithURL(url!) {
             (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
             if let data = data {
                 let json = JSON(data: data)
-                print("About to call serverDidRespond")
                 climbHistory = json
                 delegate?.serverDidRespond("getClimbs", data: nil)
             }
@@ -157,14 +148,12 @@ class ServerOverlord {
             }
         }
         
-        print("Sending http://boulderdash.herokuapp.com/user-feed?userIds=\(tempFriends)")
         let url = NSURL(string: "http://boulderdash.herokuapp.com/user-feed?userIds=\(tempFriends)")
         let session = NSURLSession.sharedSession()
         let download = session.dataTaskWithURL(url!) {
             (data: NSData?, response: NSURLResponse?, error: NSError?) -> Void in
             if let data = data {
                 let json = JSON(data: data)
-                print("Got friend feed from our DB")
                 delegate?.serverDidRespond("getFeed", data: json)
             }
             else {

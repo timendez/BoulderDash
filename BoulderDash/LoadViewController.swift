@@ -33,7 +33,7 @@ class LoadViewController: UIViewController, ServerResponseDelegate {
                 let jsonFriends = JSON(result)
                 ServerOverlord.user?.friends = jsonFriends["data"].arrayValue
                 
-                // Mfin race condition fix
+                // Race condition fix - making it atomic
                 ServerOverlord.getFriendFeed()
             }
         })
